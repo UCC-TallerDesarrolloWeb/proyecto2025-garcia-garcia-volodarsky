@@ -1,50 +1,6 @@
 # proyecto2025
 Estructura de Proyecto Taller de Desarrollo Web - 2025
 
-
-# 🏀 Chicago Bulls Fan Page
-
-##  Autores
-- **Juan Ignacio García**
-- **Francisco García**
-- **Tomás Volodarsky**
-
-## Link a la página
- [Ir a GitHub Pages](https://ucc-tallerdesarrolloweb.github.io/proyecto2025-garcia-garcia-volodarsky/)
-
-##  Contenido de la página
-1. **Home** – Presentación general del sitio y navegación.  
-2. **Roster** – Jugadores actuales del equipo.  
-3. **Historia** – Campeonatos, jugadores históricos y momentos icónicos.  
-4. **Calendario** – Próximos partidos y eventos.  
-5. **Nosotros** – Quiénes somos y objetivos del proyecto.  
-
-##  Tecnologías usadas
-- **HTML5** – estructura semántica.  
-- **CSS3** – estilos y responsive design.  
-- **JavaScript (ES6+)** – validaciones y funciones dinámicas.  
-- **GitHub Pages** – hosting del proyecto.  
-
-##  Estructura del proyecto
-| Carpeta / Archivo   | Descripción                          |
-|---------------------|--------------------------------------|
-| `/imagenes`         | Contiene las imágenes del sitio      |
-| `/sketch`           | Bocetos en papel / primeras ideas    |
-| `/wireframe`        | Mockups y wireframes (desktop/mobile)|
-| `/src`              | Código fuente (HTML, CSS, JS, React) |
-| `README.md`         | Documentación principal del proyecto |
-| `/docs/README.md`   | Requisitos y consignas del parcial   |
-
-##  Índice
-- [Autores](#-autores)  
-- [Link a la página](#-link-a-la-página)  
-- [Contenido de la página](#-contenido-de-la-página)  
-- [Tecnologías usadas](#-tecnologías-usadas)  
-- [Estructura del proyecto](#-estructura-del-proyecto)  
-
-
-
-
 ## Requisitos del Primer Parcial
 
 ### Sobre el Sketch
