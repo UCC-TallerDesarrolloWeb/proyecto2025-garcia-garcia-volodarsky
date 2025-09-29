@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicago Bulls – FanPage</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="logo">Chicago Bulls</div>
+      <nav class="primary-nav">
+        <ul>
+          <li><a href="#home">Inicio</a></li>
+          <li><a href="#roster">Roster</a></li>
+          <li><a href="#calendario">Calendario</a></li>
+          <li><a href="#historia">Historia</a></li>
+          <li><a href="#shop">Shop</a></li>
+          <li><a href="#nosotros">Nosotros</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- HOME (solo hero según wireframe) -->
+      <section id="home" class="home-hero">
+        <div class="hero-content">
+          <h1>Chicago Bulls</h1>
+          <p class="hero-sub">
+            Noticias, calendario y pasión por el rojo y negro.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#calendario">Ver calendario</a>
+            <a class="btn ghost" href="#roster">Ver roster</a>
+          </div>
+        </div>
+        <div class="hero-media" aria-hidden="true"></div>
+      </section>
+
+      <!-- PRÓXIMO PARTIDO (sección separada) -->
+      <section id="proximo-partido" class="next-game">
+        <h2>Próximo partido</h2>
+        <div class="next-game-card">
+          <div class="teams">
+            <div class="team">
+              <div class="badge">Bulls</div>
+              <span>Chicago</span>
+            </div>
+            <div class="vs">vs</div>
+            <div class="team">
+              <div class="badge alt">LAL</div>
+              <span>Lakers</span>
+            </div>
+          </div>
+          <div class="meta">
+            <p class="date">Sáb 12 Oct · 21:00</p>
+            <p class="venue">United Center</p>
+          </div>
+          <a class="btn primary" href="#calendario">Detalles del partido</a>
+        </div>
+      </section>
+
+      <!-- DESTACADOS (sección separada) -->
+      <section id="destacados" class="highlights">
+        <h2>Destacados</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="img ph"></div>
+            <h3>Top 5 jugadas</h3>
+            <p>Resumen semanal con las mejores jugadas.</p>
+            <a class="link" href="#historia">Ver más →</a>
+          </article>
+          <article class="card">
+            <div class="img ph"></div>
+            <h3>Jugador de la semana</h3>
+            <p>Estadísticas clave y highlights.</p>
+            <a class="link" href="#roster">Ver perfil →</a>
+          </article>
+          <article class="card">
+            <div class="img ph"></div>
+            <h3>Noticias</h3>
+            <p>Actualizaciones del equipo y la liga.</p>
+            <a class="link" href="#home">Ir a noticias →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- SECCIONES DEL SITIO (placeholders vacíos para maquetar después) -->
+      <section id="roster"><h2>Roster</h2></section>
+      <section id="calendario"><h2>Calendario</h2></section>
+      <section id="historia"><h2>Historia</h2></section>
+      <section id="shop"><h2>Shop</h2></section>
+      <section id="nosotros"><h2>Nosotros</h2></section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <p>&copy; 2025 FanPage Chicago Bulls - Proyecto Taller Desarrollo Web</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
