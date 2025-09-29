@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicago Bulls - Roster</title>
+    <meta name="author" content="Garcia, Garcia, Volodarsky" />
+    <meta
+      name="description"
+      content="Roster oficial de la FanPage Chicago Bulls"
+    />
+    <meta name="keywords" content="Chicago Bulls, NBA, roster, jugadores" />
+    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <main class="container">
+      <!-- ROSTER CON CARDS -->
+      <section id="roster" class="roster" aria-labelledby="titulo-roster">
+        <h1 id="titulo-roster">Roster</h1>
+
+        <p class="roster-legend">
+          <strong>Posiciones:</strong> G = Guard · F = Forward · C = Center
+        </p>
+
+        <form
+          class="roster-filters"
+          action="#"
+          method="get"
+          aria-label="Filtrar roster"
+        >
+          <label for="pos">Filtrar por posición</label>
+          <select id="pos" name="pos">
+            <option value="">Todas</option>
+            <option value="Base">Base</option>
+            <option value="Escolta">Escolta</option>
+            <option value="Alero">Alero</option>
+            <option value="Ala-Pívot">Ala-Pívot</option>
+            <option value="Pívot">Pívot</option>
+            <option value="Entrenador">Entrenadores</option>
+          </select>
+        </form>
+
+        <div class="roster-grid" id="rosterGrid">
+          <article class="card player-card" data-pos="G">
+            <img src="imagenes/jugador1.jpg" alt="Jugador 1" class="card-img" />
+            <h3 class="card-title">Jugador 1</h3>
+            <ul class="card-info">
+              <li><strong>Posición:</strong> G</li>
+              <li><strong>Altura:</strong> 1.98 m</li>
+              <li><strong>Peso:</strong> 92 kg</li>
+              <li><strong>Edad:</strong> 27</li>
+              <li><strong>Nacionalidad:</strong> ARG</li>
+            </ul>
+          </article>
+          <article class="card player-card" data-pos="F">
+            <img src="imagenes/jugador2.jpg" alt="Jugador 2" class="card-img" />
+            <h3 class="card-title">Jugador 2</h3>
+            <ul class="card-info">
+              <li><strong>Posición:</strong> F</li>
+              <li><strong>Altura:</strong> 2.03 m</li>
+              <li><strong>Peso:</strong> 100 kg</li>
+              <li><strong>Edad:</strong> 29</li>
+              <li><strong>Nacionalidad:</strong> USA</li>
+            </ul>
+          </article>
+          <article class="card player-card" data-pos="C">
+            <img src="imagenes/jugador3.jpg" alt="Jugador 3" class="card-img" />
+            <h3 class="card-title">Jugador 3</h3>
+            <ul class="card-info">
+              <li><strong>Posición:</strong> C</li>
+              <li><strong>Altura:</strong> 2.11 m</li>
+              <li><strong>Peso:</strong> 112 kg</li>
+              <li><strong>Edad:</strong> 25</li>
+              <li><strong>Nacionalidad:</strong> SRB</li>
+            </ul>
+          </article>
+          <article class="card player-card" data-pos="G">
+            <img src="imagenes/jugador4.jpg" alt="Jugador 4" class="card-img" />
+            <h3 class="card-title">Jugador 4</h3>
+            <ul class="card-info">
+              <li><strong>Posición:</strong> G</li>
+              <li><strong>Altura:</strong> 1.93 m</li>
+              <li><strong>Peso:</strong> 88 kg</li>
+              <li><strong>Edad:</strong> 24</li>
+              <li><strong>Nacionalidad:</strong> ESP</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- SPONSORS -->
+      <div id="sponsors"></div>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script>
+      // Inserta los componentes externos
+      fetch("header.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("header").innerHTML = t));
+      fetch("sponsors.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("sponsors").innerHTML = t));
+      fetch("footer.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("footer").innerHTML = t));
+
+      // Filtro de cards por posición
+      document.getElementById("pos").addEventListener("change", function () {
+        const pos = this.value;
+        document.querySelectorAll(".player-card").forEach((card) => {
+          if (!pos || card.dataset.pos === pos) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

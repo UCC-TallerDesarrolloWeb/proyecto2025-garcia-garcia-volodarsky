@@ -4,53 +4,72 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chicago Bulls – FanPage</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta name="author" content="Garcia, Garcia, Volodarsky" />
+    <meta
+      name="description"
+      content="FanPage Chicago Bulls: calendario, roster, historia y shop."
+    />
+    <meta
+      name="keywords"
+      content="Chicago Bulls, NBA, calendario, roster, historia, shop"
+    />
+    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- HEADER -->
-    <header class="site-header">
-      <div class="logo">Chicago Bulls</div>
-      <nav class="primary-nav">
-        <ul>
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#roster">Roster</a></li>
-          <li><a href="#calendario">Calendario</a></li>
-          <li><a href="#historia">Historia</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#nosotros">Nosotros</a></li>
-        </ul>
-      </nav>
-    </header>
+    <div id="header"></div>
 
     <main class="container">
-      <!-- HOME (solo hero según wireframe) -->
+      <!-- HERO -->
       <section id="home" class="home-hero">
-        <div class="hero-content">
-          <h1>Chicago Bulls</h1>
-          <p class="hero-sub">
-            Noticias, calendario y pasión por el rojo y negro.
-          </p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#calendario">Ver calendario</a>
-            <a class="btn ghost" href="#roster">Ver roster</a>
-          </div>
-        </div>
-        <div class="hero-media" aria-hidden="true"></div>
+        <h1>Chicago Bulls</h1>
       </section>
 
-      <!-- PRÓXIMO PARTIDO (sección separada) -->
+      <!-- NOTICIAS -->
+      <section id="noticias" class="news-3up" aria-labelledby="titulo-noticias">
+        <h2 id="titulo-noticias" class="visually-hidden">Noticias</h2>
+        <div class="news-grid">
+          <article class="news-card">
+            <div class="img ph" aria-hidden="true"></div>
+            <h3>Noticia 1</h3>
+            <p>Resumen breve de la noticia 1.</p>
+            <a class="link" href="#">Leer más →</a>
+          </article>
+          <article class="news-card">
+            <div class="img ph" aria-hidden="true"></div>
+            <h3>Noticia 2</h3>
+            <p>Resumen breve de la noticia 2.</p>
+            <a class="link" href="#">Leer más →</a>
+          </article>
+          <article class="news-card">
+            <div class="img ph" aria-hidden="true"></div>
+            <h3>Noticia 3</h3>
+            <p>Resumen breve de la noticia 3.</p>
+            <a class="link" href="#">Leer más →</a>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROXIMO PARTIDO -->
       <section id="proximo-partido" class="next-game">
-        <h2>Próximo partido</h2>
+        <h2 class="section-title">Próximo partido</h2>
         <div class="next-game-card">
           <div class="teams">
             <div class="team">
-              <div class="badge">Bulls</div>
-              <span>Chicago</span>
+              <div class="badge">CHI</div>
+              <span>Chicago Bulls</span>
             </div>
-            <div class="vs">vs</div>
+            <div class="vs" aria-hidden="true">vs</div>
             <div class="team">
               <div class="badge alt">LAL</div>
-              <span>Lakers</span>
+              <span>Los Angeles Lakers</span>
             </div>
           </div>
           <div class="meta">
@@ -61,44 +80,36 @@
         </div>
       </section>
 
-      <!-- DESTACADOS (sección separada) -->
-      <section id="destacados" class="highlights">
-        <h2>Destacados</h2>
-        <div class="cards">
-          <article class="card">
-            <div class="img ph"></div>
-            <h3>Top 5 jugadas</h3>
-            <p>Resumen semanal con las mejores jugadas.</p>
-            <a class="link" href="#historia">Ver más →</a>
-          </article>
-          <article class="card">
-            <div class="img ph"></div>
-            <h3>Jugador de la semana</h3>
-            <p>Estadísticas clave y highlights.</p>
-            <a class="link" href="#roster">Ver perfil →</a>
-          </article>
-          <article class="card">
-            <div class="img ph"></div>
-            <h3>Noticias</h3>
-            <p>Actualizaciones del equipo y la liga.</p>
-            <a class="link" href="#home">Ir a noticias →</a>
-          </article>
+      <!-- BOTONERA -->
+      <section class="home-actions">
+        <div class="actions-row">
+          <a class="btn primary" href="#roster">Roster</a>
+          <a class="btn primary" href="#calendario">Calendario</a>
+          <a class="btn primary" href="#historia">Historia</a>
+          <a class="btn primary" href="#shop">Shop</a>
+          <a class="btn primary" href="#nosotros">Nosotros</a>
         </div>
       </section>
 
-      <!-- SECCIONES DEL SITIO (placeholders vacíos para maquetar después) -->
-      <section id="roster"><h2>Roster</h2></section>
-      <section id="calendario"><h2>Calendario</h2></section>
-      <section id="historia"><h2>Historia</h2></section>
-      <section id="shop"><h2>Shop</h2></section>
-      <section id="nosotros"><h2>Nosotros</h2></section>
+      <!-- SPONSORS -->
+      <div id="sponsors"></div>
     </main>
 
     <!-- FOOTER -->
-    <footer class="site-footer">
-      <p>&copy; 2025 FanPage Chicago Bulls - Proyecto Taller Desarrollo Web</p>
-    </footer>
+    <div id="footer"></div>
 
-    <script src="script.js"></script>
+    <script>
+      // Inserta los componentes externos
+      fetch("header.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("header").innerHTML = t));
+      fetch("sponsors.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("sponsors").innerHTML = t));
+      fetch("footer.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("footer").innerHTML = t));
+    </script>
+    <script src="js/script.js"></script>
   </body>
 </html>
