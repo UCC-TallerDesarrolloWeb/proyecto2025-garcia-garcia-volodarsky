@@ -519,29 +519,6 @@
       fetch("footer.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("footer").innerHTML = t));
-
-      // Filtrado por mes
-      document.getElementById("mes").addEventListener("change", function () {
-        const mes = this.value;
-        let count = 0;
-        document.querySelectorAll(".game-card").forEach((card) => {
-          if (!mes || card.getAttribute("data-month") === mes) {
-            card.style.display = "";
-            count++;
-          } else {
-            card.style.display = "none";
-          }
-        });
-        document.getElementById("calCount").textContent = count;
-        document.getElementById("calEmpty").hidden = count > 0;
-      });
-
-      // Inicializa contador al cargar
-      window.addEventListener("DOMContentLoaded", function () {
-        const total = document.querySelectorAll(".game-card").length;
-        document.getElementById("calCount").textContent = total;
-        document.getElementById("calEmpty").hidden = total > 0;
-      });
     </script>
     <script src="js/script.js"></script>
   </body>

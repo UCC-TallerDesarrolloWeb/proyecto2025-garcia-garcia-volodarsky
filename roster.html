@@ -342,18 +342,6 @@
       fetch("footer.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("footer").innerHTML = t));
-
-      // Filtro de cards por posición
-      document.getElementById("pos").addEventListener("change", function () {
-        const pos = this.value;
-        document.querySelectorAll(".player-card").forEach((card) => {
-          if (!pos || card.dataset.pos === pos) {
-            card.style.display = "";
-          } else {
-            card.style.display = "none";
-          }
-        });
-      });
     </script>
     <script src="js/script.js"></script>
   </body>
