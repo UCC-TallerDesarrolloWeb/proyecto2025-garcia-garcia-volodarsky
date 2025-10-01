@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chicago Bulls – Nosotros</title>
+    <meta name="author" content="Garcia, Garcia, Volodarsky" />
+    <meta
+      name="description"
+      content="Página Nosotros de la FanPage Chicago Bulls: ciudad, estadio, historia breve y sponsors."
+    />
+    <meta
+      name="keywords"
+      content="Chicago Bulls, NBA, nosotros, ciudad, estadio, historia"
+    />
+    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <main class="container nosotros">
+      <h1>Nosotros</h1>
+
+      <!-- Descripción general -->
+      <section class="nosotros-descripcion">
+        <p>
+          Los Chicago Bulls son una franquicia histórica de la NBA. Esta página
+          busca acercar la historia, la ciudad y el estadio del equipo a los
+          fans hispanohablantes.
+        </p>
+      </section>
+
+      <!-- Ciudad -->
+      <section class="nosotros-ciudad">
+        <h2>Ciudad</h2>
+        <p>
+          Chicago, Illinois: una ciudad vibrante, conocida por su arquitectura,
+          su cultura y por ser hogar de los legendarios Chicago Bulls.
+        </p>
+      </section>
+
+      <!-- Foto con descripción -->
+      <section class="nosotros-foto">
+        <img src="imagenes/chicago.jpg" alt="Imagen de Chicago" />
+        <p>Vista de la ciudad.</p>
+      </section>
+
+      <!-- Estadio -->
+      <section class="nosotros-estadio">
+        <h2>Estadio</h2>
+        <p>
+          El United Center, inaugurado en 1994, es el estadio actual de los
+          Bulls. Tiene capacidad para más de 20.000 espectadores y es
+          considerado “la casa que construyó Jordan”.
+        </p>
+      </section>
+
+      <!-- Fotos múltiples -->
+      <section class="nosotros-fotos">
+        <article class="foto-card">
+          <img src="imagenes/estadio1.webp" alt="Imagen 1" />
+          <p>Descripción 1</p>
+        </article>
+        <article class="foto-card">
+          <img src="imagenes/estadio2.jpg" alt="Imagen 2" />
+          <p>Descripción 2</p>
+        </article>
+        <article class="foto-card">
+          <img src="imagenes/estadio4.webp" alt="Imagen 3" />
+          <p>Descripción 3</p>
+        </article>
+      </section>
+    </main>
+
+    <!-- SPONSORS -->
+    <div id="sponsors"></div>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script>
+      fetch("header.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("header").innerHTML = t));
+      fetch("sponsors.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("sponsors").innerHTML = t));
+      fetch("footer.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("footer").innerHTML = t));
+    </script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

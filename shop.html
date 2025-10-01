@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shop Chicago Bulls</title>
+    <meta name="author" content="Garcia, Garcia, Volodarsky" />
+    <meta
+      name="description"
+      content="Shop de la FanPage Chicago Bulls con filtros por categoría, talle y precio."
+    />
+    <meta
+      name="keywords"
+      content="Chicago Bulls, NBA, shop, camisetas, gorras, buzos"
+    />
+    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="header"></div>
+
+    <main class="container shop-page">
+      <h1>Shop Chicago Bulls</h1>
+      <p class="shop-lead">
+        Productos oficiales ficticios para practicar maquetado y filtros.
+      </p>
+
+      <!-- Barra de filtros -->
+      <form
+        class="shop-filters"
+        action="#"
+        method="get"
+        aria-label="Filtrar productos"
+      >
+        <input
+          id="qShop"
+          type="search"
+          placeholder="Buscar…"
+          aria-label="Buscar producto"
+        />
+
+        <select id="catShop" aria-label="Categoría">
+          <option value="">Categoría ▾</option>
+          <option value="camiseta">Camiseta</option>
+          <option value="gorra">Gorra</option>
+          <option value="buzo">Buzo</option>
+          <option value="short">Short</option>
+          <option value="media">Media</option>
+        </select>
+
+        <select id="talleShop" aria-label="Talle">
+          <option value="">Talle ▾</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="U">U</option>
+          <!-- único/ajustable -->
+        </select>
+
+        <select id="precioShop" aria-label="Precio">
+          <option value="">Precio ▾</option>
+          <option value="1">Hasta $20.000</option>
+          <option value="2">$20.001 – $40.000</option>
+          <option value="3">Más de $40.000</option>
+        </select>
+
+        <select id="ordenShop" aria-label="Orden">
+          <option value="">Orden ▾</option>
+          <option value="price-asc">Precio (↑)</option>
+          <option value="price-desc">Precio (↓)</option>
+          <option value="name-asc">Nombre (A–Z)</option>
+          <option value="name-desc">Nombre (Z–A)</option>
+        </select>
+      </form>
+
+      <!-- Grilla de productos (6) -->
+      <section
+        id="shopGrid"
+        class="shop-grid"
+        aria-label="Listado de productos"
+      >
+        <!-- data-*: categoría, talle, precio numérico y texto para búsqueda -->
+        <article
+          class="prod-card"
+          data-cat="camiseta"
+          data-size="S,M,L,XL"
+          data-price="29999"
+          data-text="remera home 24 25 chicago bulls local"
+        >
+          <div class="prod-img" aria-hidden="true"></div>
+          <h3 class="prod-title">Camiseta Home 24/25</h3>
+          <p class="prod-desc">Modelo local rojo. Talles: S–XL.</p>
+          <div class="prod-meta">
+            <span class="prod-price" data-num="29999">$ 29.999</span>
+            <button class="btn primary" type="button">Agregar</button>
+          </div>
+        </article>
+
+        <article
+          class="prod-card"
+          data-cat="camiseta"
+          data-size="S,M,L,XL"
+          data-price="31999"
+          data-text="remera away 24 25 chicago bulls visitante blanco"
+        >
+          <div class="prod-img" aria-hidden="true"></div>
+          <h3 class="prod-title">Camiseta Away 24/25</h3>
+          <p class="prod-desc">Modelo visitante blanco. Talles: S–XL.</p>
+          <div class="prod-meta">
+            <span class="prod-price" data-num="31999">$ 31.999</span>
+            <button class="btn primary" type="button">Agregar</button>
+          </div>
+        </article>
+
+        <article
+          class="prod-card"
+          data-cat="gorra"
+          data-size="U"
+          data-price="19999"
+          data-text="gorra classic chicago bulls snapback negra"
+        >
+          <div class="prod-img" aria-hidden="true"></div>
+          <h3 class="prod-title">Gorra Classic</h3>
+          <p class="prod-desc">Snapback ajustable. Talle: U.</p>
+          <div class="prod-meta">
+            <span class="prod-price" data-num="19999">$ 19.999</span>
+            <button class="btn primary" type="button">Agregar</button>
+          </div>
+        </article>
+
+        <article
+          class="prod-card"
+          data-cat="buzo"
+          data-size="M,L,XL"
+          data-price="44999"
+          data-text="buzo retro chicago bulls capucha negro"
+        >
+          <div class="prod-img" aria-hidden="true"></div>
+          <h3 class="prod-title">Buzo Retro</h3>
+          <p class="prod-desc">Con capucha, estilo 90s. Talles: M–XL.</p>
+          <div class="prod-meta">
+            <span class="prod-price" data-num="44999">$ 44.999</span>
+            <button class="btn primary" type="button">Agregar</button>
+          </div>
+        </article>
+
+        <article
+          class="prod-card"
+          data-cat="short"
+          data-size="S,M,L,XL"
+          data-price="25999"
+          data-text="short classic chicago bulls training"
+        >
+          <div class="prod-img" aria-hidden="true"></div>
+          <h3 class="prod-title">Short Classic</h3>
+          <p class="prod-desc">Entrenamiento liviano. Talles: S–XL.</p>
+          <div class="prod-meta">
+            <span class="prod-price" data-num="25999">$ 25.999</span>
+            <button class="btn primary" type="button">Agregar</button>
+          </div>
+        </article>
+
+        <article
+          class="prod-card"
+          data-cat="media"
+          data-size="S,M,L"
+          data-price="9999"
+          data-text="medias team chicago bulls pack"
+        >
+          <div class="prod-img" aria-hidden="true"></div>
+          <h3 class="prod-title">Medias Team</h3>
+          <p class="prod-desc">Pack x2. Talles: S–L.</p>
+          <div class="prod-meta">
+            <span class="prod-price" data-num="9999">$ 9.999</span>
+            <button class="btn primary" type="button">Agregar</button>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <!-- SPONSORS -->
+    <div id="sponsors"></div>
+
+    <!-- FOOTER -->
+    <div id="footer"></div>
+
+    <script>
+      // Includes
+      fetch("header.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("header").innerHTML = t));
+      fetch("sponsors.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("sponsors").innerHTML = t));
+      fetch("footer.html")
+        .then((r) => r.text())
+        .then((t) => (document.getElementById("footer").innerHTML = t));
+
+      // ===== Filtros/orden para SHOP =====
+      document.addEventListener("DOMContentLoaded", () => {
+        const q = document.getElementById("qShop");
+        const cat = document.getElementById("catShop");
+        const talle = document.getElementById("talleShop");
+        const precio = document.getElementById("precioShop");
+        const orden = document.getElementById("ordenShop");
+        const grid = document.getElementById("shopGrid");
+
+        const cards = Array.from(grid.querySelectorAll(".prod-card"));
+
+        const norm = (s) =>
+          (s || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+
+        function matchPrecio(p, bucket) {
+          if (!bucket) return true;
+          const n = Number(p);
+          if (bucket === "1") return n <= 20000;
+          if (bucket === "2") return n > 20000 && n <= 40000;
+          if (bucket === "3") return n > 40000;
+          return true;
+        }
+
+        function aplicar() {
+          const term = norm(q.value);
+          const c = cat.value;
+          const t = talle.value;
+          const pr = precio.value;
+
+          cards.forEach((card) => {
+            const txt = norm(card.getAttribute("data-text"));
+            const okText = !term || txt.includes(term);
+
+            const okCat = !c || card.dataset.cat === c;
+
+            const sizes = (card.dataset.size || "").split(",");
+            const okSize = !t || sizes.includes(t);
+
+            const okPrice = matchPrecio(card.dataset.price, pr);
+
+            const show = okText && okCat && okSize && okPrice;
+            card.style.display = show ? "" : "none";
+          });
+
+          ordenar();
+        }
+
+        function ordenar() {
+          const val = orden.value;
+          const visibles = cards.filter((c) => c.style.display !== "none");
+          if (!val) return; // sin orden → queda natural
+
+          visibles.sort((a, b) => {
+            if (val === "price-asc" || val === "price-desc") {
+              const pa = Number(a.dataset.price),
+                pb = Number(b.dataset.price);
+              return val === "price-asc" ? pa - pb : pb - pa;
+            } else {
+              const na = a.querySelector(".prod-title").textContent.trim();
+              const nb = b.querySelector(".prod-title").textContent.trim();
+              return val === "name-asc"
+                ? na.localeCompare(nb)
+                : nb.localeCompare(na);
+            }
+          });
+
+          // Reinsertar en el DOM solo los visibles (los ocultos quedan donde están)
+          visibles.forEach((el) => grid.appendChild(el));
+        }
+
+        [q, cat, talle, precio].forEach((el) =>
+          el.addEventListener("input", aplicar)
+        );
+        orden.addEventListener("change", ordenar);
+
+        aplicar(); // init
+      });
+    </script>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
