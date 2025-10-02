@@ -8,7 +8,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 10px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
 }
 .shop-grid .prod-img img {
   width: 100%;
@@ -1158,12 +1158,12 @@ h1 {
     width: 350px;
     max-width: 90vw;
   }
-  
+
   .cart-actions {
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .cart-actions .btn {
     padding: 18px;
     font-size: 1.2rem;
@@ -1353,11 +1353,11 @@ h1 {
     grid-template-columns: 1fr;
     gap: 20px;
   }
-  
+
   .form-row {
     grid-template-columns: 1fr;
   }
-  
+
   .checkout-actions {
     flex-direction: column;
   }
@@ -1373,11 +1373,11 @@ h1 {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
-  
+
   .primary-nav ul {
     gap: 20px;
   }
-  
+
   .cart-sidebar {
     width: 320px;
   }
@@ -1388,31 +1388,31 @@ h1 {
   .container {
     padding: 0 16px;
   }
-  
+
   h1 {
     font-size: 3rem;
   }
-  
+
   .news-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  
+
   /* Header responsive */
   .site-header {
     position: relative;
   }
-  
+
   .menu-toggle {
     display: flex;
     order: 3;
   }
-  
+
   .cart-counter {
     order: 2;
     margin-right: 10px;
   }
-  
+
   .primary-nav {
     position: absolute;
     top: 100%;
@@ -1425,49 +1425,47 @@ h1 {
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
-  
+
   .primary-nav.active {
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
   }
-  
+
   .primary-nav ul {
     flex-direction: column;
     gap: 0;
     padding: 20px;
   }
-  
+
   .primary-nav li {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
-  
+
   .primary-nav li:last-child {
     border-bottom: none;
   }
-  
+
   .primary-nav a {
     display: block;
     padding: 15px 0;
     font-size: 1.1rem;
     transition: color 0.2s ease;
   }
-  
+
   .primary-nav a:hover {
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
   }
-  
+
   /* Resto de estilos móvil */
   .next-game-card {
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .shop-filters {
     flex-direction: column;
     gap: 12px;
   }
 }
-
-
