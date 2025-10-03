@@ -455,8 +455,8 @@ function initCheckout() {
   }
 
   function aplicarFiltro(){
-    const mes = selMes.value;               // "" o "10".."12","1".."4"
-    const term = normalizar(q.value);
+    const mes = selMes?.value || "";               // "" o "10".."12","1".."4"
+    const term = normalizar(q?.value || "");
 
     let visibles = 0;
     items.forEach(li=>{
@@ -469,8 +469,8 @@ function initCheckout() {
       if(show) visibles++;
     });
 
-    count.textContent = String(visibles);
-    empty.hidden = visibles > 0;
+    if(count) count.textContent = String(visibles);
+    if(empty) empty.hidden = visibles > 0;
   }
 
   selMes?.addEventListener("change", aplicarFiltro);
