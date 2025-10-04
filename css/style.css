@@ -194,19 +194,22 @@ h1 {
 }
 
 /* HERO */
-.home-hero {
+#home-hero {
   margin-bottom: 40px;
 }
 
 /* NOTICIAS */
 .visually-hidden {
-  position: absolute !important;
-  clip: rect(1px, 1px, 1px, 1px);
-  padding: 0;
-  border: 0;
-  height: 1px;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   width: 1px;
+  height: 1px;
   overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
 }
 .news-grid {
   display: grid;
