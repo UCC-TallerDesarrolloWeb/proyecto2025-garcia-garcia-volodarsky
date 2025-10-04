@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout - Chicago Bulls</title>
     <meta name="author" content="Garcia, Garcia, Volodarsky" />
-    <meta name="description" content="Finalizar compra en la tienda Chicago Bulls" />
+    <meta
+      name="description"
+      content="Finalizar compra en la tienda Chicago Bulls"
+    />
     <link rel="icon" href="imagenes/favicon.png" type="image/png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +24,7 @@
 
     <main class="container checkout-page">
       <h1>Finalizar Compra</h1>
-      
+
       <div class="checkout-container">
         <div class="checkout-form-section">
           <form class="checkout-form" id="checkoutForm">
@@ -30,16 +33,35 @@
               <div class="form-row">
                 <div class="form-group">
                   <label for="fullName">Nombre Completo *</label>
-                  <input type="text" id="fullName" name="fullName" required>
+                  <input
+                    type="text"
+                    id="fullName"
+                    name="fullName"
+                    required
+                    maxlength="50"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="dni">DNI *</label>
-                  <input type="text" id="dni" name="dni" pattern="[0-9]{7,8}" required>
+                  <input
+                    type="text"
+                    id="dni"
+                    name="dni"
+                    pattern="[0-9]{7,8}"
+                    required
+                    maxlength="8"
+                  />
                 </div>
               </div>
               <div class="form-group">
                 <label for="phone">Teléfono *</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  required
+                  maxlength="15"
+                />
               </div>
             </div>
 
@@ -47,16 +69,35 @@
               <h3>Dirección de Envío</h3>
               <div class="form-group">
                 <label for="address">Dirección Completa *</label>
-                <input type="text" id="address" name="address" placeholder="Calle, Número, Piso, Depto" required>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  placeholder="Calle, Número, Piso, Depto"
+                  required
+                  maxlength="60"
+                />
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="city">Ciudad *</label>
-                  <input type="text" id="city" name="city" required>
+                  <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    required
+                    maxlength="30"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="postalCode">Código Postal *</label>
-                  <input type="text" id="postalCode" name="postalCode" required>
+                  <input
+                    type="text"
+                    id="postalCode"
+                    name="postalCode"
+                    required
+                    maxlength="10"
+                  />
                 </div>
               </div>
             </div>
@@ -65,23 +106,46 @@
               <h3>Datos de Pago</h3>
               <div class="form-group">
                 <label for="cardNumber">Número de Tarjeta *</label>
-                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19" required>
+                <input
+                  type="text"
+                  id="cardNumber"
+                  name="cardNumber"
+                  placeholder="1234 5678 9012 3456"
+                  maxlength="19"
+                  required
+                />
               </div>
               <div class="form-row">
                 <div class="form-group">
                   <label for="cardExpiry">Vencimiento *</label>
-                  <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/AA" maxlength="5" required>
+                  <input
+                    type="text"
+                    id="cardExpiry"
+                    name="cardExpiry"
+                    placeholder="MM/AA"
+                    maxlength="5"
+                    required
+                  />
                 </div>
                 <div class="form-group">
                   <label for="cardCvv">CVV *</label>
-                  <input type="text" id="cardCvv" name="cardCvv" placeholder="123" maxlength="3" required>
+                  <input
+                    type="text"
+                    id="cardCvv"
+                    name="cardCvv"
+                    placeholder="123"
+                    maxlength="3"
+                    required
+                  />
                 </div>
               </div>
             </div>
 
             <div class="checkout-actions">
               <a href="shop.html" class="btn secondary">Volver al Shop</a>
-              <button type="submit" class="btn primary">Confirmar Compra</button>
+              <button type="submit" class="btn primary">
+                Confirmar Compra
+              </button>
             </div>
           </form>
         </div>
@@ -105,7 +169,10 @@
       <div class="success-content">
         <div class="success-icon">✓</div>
         <h2>¡Compra Realizada!</h2>
-        <p>Muchas gracias por tu compra. Recibirás un email con los detalles del pedido.</p>
+        <p>
+          Muchas gracias por tu compra. Recibirás un email con los detalles del
+          pedido.
+        </p>
         <a href="shop.html" class="btn primary">Continuar Comprando</a>
       </div>
     </div>
@@ -122,7 +189,7 @@
         .then((r) => r.text())
         .then((t) => (document.getElementById("footer").innerHTML = t));
     </script>
-    
+
     <script src="js/script.js"></script>
   </body>
 </html>
