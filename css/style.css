@@ -750,9 +750,14 @@ h1 {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-direction: row-reverse;
 }
 .game-right .time {
   color: #ddd;
+}
+.game-right .time::before {
+  content: "- ";
+  color: #999;
 }
 
 .cal-empty {
@@ -766,10 +771,34 @@ h1 {
   }
   .game-card {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
     align-items: start;
+    gap: 8px;
+    padding: 10px 8px;
+  }
+  .game-left {
+    grid-row: 1;
   }
   .game-right {
-    justify-content: space-between;
+    grid-row: 2;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding-top: 8px;
+    border-top: 1px solid #333;
+    font-size: 0.85rem;
+    gap: 8px;
+    flex-direction: row;
+  }
+  .game-right .meta {
+    text-align: left;
+  }
+  .game-right .meta::before {
+    content: "- ";
+    color: #999;
+  }
+  .game-right .time::before {
+    content: none;
   }
 }
 
