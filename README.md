@@ -10,7 +10,6 @@ Sitio web dedicado a los Chicago Bulls, aplicando conceptos de **HTML5, CSS3 y J
 2. [Link del Proyecto](#link-del-proyecto)
 3. [Contenido de la Página](#contenido-de-la-página)
 4. [Tecnologías Usadas](#tecnologías-usadas)
-5. [Estructura de Carpetas](#estructura-de-carpetas)
 
 ---
 
