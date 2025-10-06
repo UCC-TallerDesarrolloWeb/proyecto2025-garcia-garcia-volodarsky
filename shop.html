@@ -1,440 +1,440 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Shop Chicago Bulls</title>
-    <meta name="author" content="Garcia, Garcia, Volodarsky" />
+    <meta name="author" content="Garcia, Garcia, Volodarsky"/>
     <meta
-      name="description"
-      content="Shop de la FanPage Chicago Bulls con filtros        if (cartCount) cartCount.textContent = totalItems;
+            name="description"
+            content="Shop de la FanPage Chicago Bulls con filtros        if (cartCount) cartCount.textContent = totalItems;
         if (cartCounter) cartCounter.style.display = totalItems > 0 ? 'block' : 'none';por categoría, talle y precio."
     />
     <meta
-      name="keywords"
-      content="Chicago Bulls, NBA, shop, camisetas, gorras, buzos"
+            name="keywords"
+            content="Chicago Bulls, NBA, shop, camisetas, gorras, buzos"
     />
-    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="imagenes/logo-bulls.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+            rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- HEADER -->
-    <div id="header"></div>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!-- HEADER -->
+<div id="header"></div>
 
-    <main class="container shop-page">
-      <h1>Shop Chicago Bulls</h1>
+<main class="container shop-page">
+    <h1>Shop Chicago Bulls</h1>
 
-      <!-- Barra de filtros -->
-      <form
-        class="shop-filters"
-        action="#"
-        method="get"
-        aria-label="Filtrar productos"
-      >
+    <!-- Barra de filtros -->
+    <form
+            class="shop-filters"
+            action="#"
+            method="get"
+            aria-label="Filtrar productos"
+    >
         <input
-          id="qShop"
-          type="search"
-          placeholder="Buscar…"
-          aria-label="Buscar producto"
+                id="qShop"
+                type="search"
+                placeholder="Buscar…"
+                aria-label="Buscar producto"
         />
 
         <select id="catShop" aria-label="Categoría">
-          <option value="">Categoría</option>
-          <option value="camiseta">Camiseta</option>
-          <option value="gorra">Gorra</option>
-          <option value="buzo">Buzo</option>
-          <option value="short">Short</option>
-          <option value="media">Media</option>
-          <option value="pelota">Pelota</option>
+            <option value="">Categoría</option>
+            <option value="camiseta">Camiseta</option>
+            <option value="gorra">Gorra</option>
+            <option value="buzo">Buzo</option>
+            <option value="short">Short</option>
+            <option value="media">Media</option>
+            <option value="pelota">Pelota</option>
         </select>
 
         <select id="talleShop" aria-label="Talle">
-          <option value="">Talle</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-          <option value="U">U</option>
-          <!-- único/ajustable -->
+            <option value="">Talle</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="U">U</option>
+            <!-- único/ajustable -->
         </select>
 
         <select id="precioShop" aria-label="Precio">
-          <option value="">Precio</option>
-          <option value="1">Hasta $20.000</option>
-          <option value="2">$20.001 – $40.000</option>
-          <option value="3">Más de $40.000</option>
+            <option value="">Precio</option>
+            <option value="1">Hasta $20.000</option>
+            <option value="2">$20.001 – $40.000</option>
+            <option value="3">Más de $40.000</option>
         </select>
 
         <select id="ordenShop" aria-label="Orden">
-          <option value="">Orden</option>
-          <option value="price-asc">Precio (↑)</option>
-          <option value="price-desc">Precio (↓)</option>
-          <option value="name-asc">Nombre (A–Z)</option>
-          <option value="name-desc">Nombre (Z–A)</option>
+            <option value="">Orden</option>
+            <option value="price-asc">Precio (↑)</option>
+            <option value="price-desc">Precio (↓)</option>
+            <option value="name-asc">Nombre (A–Z)</option>
+            <option value="name-desc">Nombre (Z–A)</option>
         </select>
-      </form>
+    </form>
 
-      <!-- Grilla de productos (6) -->
-      <section
-        id="shopGrid"
-        class="shop-grid"
-        aria-label="Listado de productos"
-      >
+    <!-- Grilla de productos (6) -->
+    <section
+            id="shopGrid"
+            class="shop-grid"
+            aria-label="Listado de productos"
+    >
         <!-- data-*: categoría, talle, precio numérico y texto para búsqueda -->
         <article
-          class="prod-card"
-          data-cat="camiseta"
-          data-size="S,M,L,XL"
-          data-price="29999"
-          data-text="remera home 24 25 chicago bulls local"
+                class="prod-card"
+                data-cat="camiseta"
+                data-size="S,M,L,XL"
+                data-price="29999"
+                data-text="remera home 24 25 chicago bulls local"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/camisetalocal.jpg"
-              alt="Camiseta Home 24/25 Chicago Bulls"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/camisetalocal.jpg"
+                        alt="Camiseta Home 24/25 Chicago Bulls"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Camiseta Home 24/25</h3>
-          <p class="prod-desc">Modelo local rojo. Talles: S–XL.</p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="29999">$ 29.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Camiseta Home 24/25', 29999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Camiseta Home 24/25</h3>
+            <p class="prod-desc">Modelo local rojo. Talles: S–XL.</p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="29999">$ 29.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Camiseta Home 24/25', 29999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
 
         <article
-          class="prod-card"
-          data-cat="camiseta"
-          data-size="S,M,L,XL"
-          data-price="31999"
-          data-text="remera away 24 25 chicago bulls visitante blanco"
+                class="prod-card"
+                data-cat="camiseta"
+                data-size="S,M,L,XL"
+                data-price="31999"
+                data-text="remera away 24 25 chicago bulls visitante blanco"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/camisetavisita.jpg"
-              alt="Camiseta Away 24/25 Chicago Bulls"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/camisetavisita.jpg"
+                        alt="Camiseta Away 24/25 Chicago Bulls"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Camiseta Away 24/25</h3>
-          <p class="prod-desc">Modelo visitante blanco. Talles: S–XL.</p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="31999">$ 31.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Camiseta Away 24/25', 31999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Camiseta Away 24/25</h3>
+            <p class="prod-desc">Modelo visitante blanco. Talles: S–XL.</p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="31999">$ 31.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Camiseta Away 24/25', 31999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
 
         <article
-          class="prod-card"
-          data-cat="gorra"
-          data-size="U"
-          data-price="19999"
-          data-text="gorra classic chicago bulls snapback negra"
+                class="prod-card"
+                data-cat="gorra"
+                data-size="U"
+                data-price="19999"
+                data-text="gorra classic chicago bulls snapback negra"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/gorra.avif"
-              alt="Gorra Classic Chicago Bulls"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/gorra.avif"
+                        alt="Gorra Classic Chicago Bulls"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Gorra Classic</h3>
-          <p class="prod-desc">Snapback ajustable. Talle: U.</p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="19999">$ 19.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Gorra Classic', 19999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Gorra Classic</h3>
+            <p class="prod-desc">Snapback ajustable. Talle: U.</p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="19999">$ 19.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Gorra Classic', 19999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
 
         <article
-          class="prod-card"
-          data-cat="buzo"
-          data-size="M,L,XL"
-          data-price="44999"
-          data-text="buzo retro chicago bulls capucha negro"
+                class="prod-card"
+                data-cat="buzo"
+                data-size="M,L,XL"
+                data-price="44999"
+                data-text="buzo retro chicago bulls capucha negro"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/campera.jpg"
-              alt="Buzo Retro Chicago Bulls"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/campera.jpg"
+                        alt="Buzo Retro Chicago Bulls"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Buzo Retro</h3>
-          <p class="prod-desc">Con capucha, estilo 90s. Talles: M–XL.</p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="44999">$ 44.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Buzo Retro', 44999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Buzo Retro</h3>
+            <p class="prod-desc">Con capucha, estilo 90s. Talles: M–XL.</p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="44999">$ 44.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Buzo Retro', 44999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
 
         <article
-          class="prod-card"
-          data-cat="short"
-          data-size="S,M,L,XL"
-          data-price="25999"
-          data-text="short classic chicago bulls training"
+                class="prod-card"
+                data-cat="short"
+                data-size="S,M,L,XL"
+                data-price="25999"
+                data-text="short classic chicago bulls training"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/short.avif"
-              alt="Short Classic Chicago Bulls"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/short.avif"
+                        alt="Short Classic Chicago Bulls"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Short Classic</h3>
-          <p class="prod-desc">Entrenamiento liviano. Talles: S–XL.</p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="25999">$ 25.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Short Classic', 25999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Short Classic</h3>
+            <p class="prod-desc">Entrenamiento liviano. Talles: S–XL.</p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="25999">$ 25.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Short Classic', 25999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
 
         <article
-          class="prod-card"
-          data-cat="media"
-          data-size="S,M,L"
-          data-price="9999"
-          data-text="medias team chicago bulls pack"
+                class="prod-card"
+                data-cat="media"
+                data-size="S,M,L"
+                data-price="9999"
+                data-text="medias team chicago bulls pack"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/medias.jpg"
-              alt="Medias Team Chicago Bulls"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/medias.jpg"
+                        alt="Medias Team Chicago Bulls"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Medias Team</h3>
-          <p class="prod-desc">Pack x2. Talles: S–L.</p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="9999">$ 9.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Medias Team', 9999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Medias Team</h3>
+            <p class="prod-desc">Pack x2. Talles: S–L.</p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="9999">$ 9.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Medias Team', 9999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
 
         <article
-          class="prod-card"
-          data-cat="short"
-          data-size="S,M,L,XL"
-          data-price="25999"
-          data-text="short classic blanco chicago bulls training"
+                class="prod-card"
+                data-cat="short"
+                data-size="S,M,L,XL"
+                data-price="25999"
+                data-text="short classic blanco chicago bulls training"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/short2.webp"
-              alt="short"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/short2.webp"
+                        alt="short"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Short 24/25</h3>
-          <p class="prod-desc">
-            Modelo blanco Statement Edition. Talles: S–XL.
-          </p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="25999">$ 25.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Short Statement 24/25', 25999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Short 24/25</h3>
+            <p class="prod-desc">
+                Modelo blanco Statement Edition. Talles: S–XL.
+            </p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="25999">$ 25.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Short Statement 24/25', 25999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
         <article
-          class="prod-card"
-          data-cat="pelota"
-          data-size="U"
-          data-price="21999"
-          data-text="pelota oficial nba chicago bulls Wilson"
+                class="prod-card"
+                data-cat="pelota"
+                data-size="U"
+                data-price="21999"
+                data-text="pelota oficial nba chicago bulls Wilson"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/pelota2.webp"
-              alt="Pelota Oficial Chicago Bulls Spalding"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/pelota2.webp"
+                        alt="Pelota Oficial Chicago Bulls Spalding"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Pelota Oficial Spalding</h3>
-          <p class="prod-desc">
-            Pelota de básquet oficial Chicago Bulls. Talle 7.
-          </p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="21999">$ 21.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Pelota Oficial Spalding', 21999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Pelota Oficial Spalding</h3>
+            <p class="prod-desc">
+                Pelota de básquet oficial Chicago Bulls. Talle 7.
+            </p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="21999">$ 21.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Pelota Oficial Spalding', 21999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
 
         <article
-          class="prod-card"
-          data-cat="pelota"
-          data-size="U"
-          data-price="24999"
-          data-text="pelota nba edicion especial chicago bulls jordan"
+                class="prod-card"
+                data-cat="pelota"
+                data-size="U"
+                data-price="24999"
+                data-text="pelota nba edicion especial chicago bulls jordan"
         >
-          <div class="prod-img" aria-hidden="true">
-            <img
-              src="imagenes/pelota.webp"
-              alt="Pelota Edición Especial Chicago Bulls Jordan"
-              style="
+            <div class="prod-img" aria-hidden="true">
+                <img
+                        src="imagenes/pelota.webp"
+                        alt="Pelota Edición Especial Chicago Bulls Jordan"
+                        style="
                 width: 100%;
                 max-width: 180px;
                 display: block;
                 margin: 0 auto;
               "
-            />
-          </div>
-          <h3 class="prod-title">Pelota Edición Especial</h3>
-          <p class="prod-desc">
-            Edición Jordan con logo Chicago Bulls. Talle 7.
-          </p>
-          <div class="prod-meta">
-            <span class="prod-price" data-num="24999">$ 24.999</span>
-            <button
-              class="btn primary"
-              type="button"
-              onclick="addToCart('Pelota Edición Especial', 24999)"
-            >
-              Agregar
-            </button>
-          </div>
+                />
+            </div>
+            <h3 class="prod-title">Pelota Edición Especial</h3>
+            <p class="prod-desc">
+                Edición Jordan con logo Chicago Bulls. Talle 7.
+            </p>
+            <div class="prod-meta">
+                <span class="prod-price" data-num="24999">$ 24.999</span>
+                <button
+                        class="btn primary"
+                        type="button"
+                        onclick="addToCart('Pelota Edición Especial', 24999)"
+                >
+                    Agregar
+                </button>
+            </div>
         </article>
-      </section>
+    </section>
 
-      <!-- SPONSORS -->
-      <div id="sponsors"></div>
-    </main>
+    <!-- SPONSORS -->
+    <div id="sponsors"></div>
+</main>
 
-    <!-- FOOTER -->
-    <div id="footer"></div>
+<!-- FOOTER -->
+<div id="footer"></div>
 
-    <!-- CARRITO LATERAL -->
-    <div class="cart-sidebar" id="cartSidebar">
-      <div class="cart-header">
+<!-- CARRITO LATERAL -->
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
         <h3>Tu Carrito</h3>
         <button class="cart-close" onclick="closeCart()">×</button>
-      </div>
-      <div class="cart-content">
+    </div>
+    <div class="cart-content">
         <div id="cartItems"></div>
-      </div>
-      <div class="cart-footer">
+    </div>
+    <div class="cart-footer">
         <div class="cart-total">
-          <strong>Total: $<span id="cartTotal">0</span></strong>
+            <strong>Total: $<span id="cartTotal">0</span></strong>
         </div>
         <div class="cart-actions">
-          <button class="btn primary" onclick="clearCart()">
-            Vaciar Carrito
-          </button>
-          <button class="btn primary" onclick="checkout()">
-            Finalizar Compra
-          </button>
+            <button class="btn primary" onclick="clearCart()">
+                Vaciar Carrito
+            </button>
+            <button class="btn primary" onclick="checkout()">
+                Finalizar Compra
+            </button>
         </div>
-      </div>
     </div>
-    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+</div>
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
 
-    <script>
-      // Includes
-      fetch("header.html")
+<script>
+    // Includes
+    fetch("header.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("header").innerHTML = t));
-      fetch("sponsors.html")
+    fetch("sponsors.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("sponsors").innerHTML = t));
-      fetch("footer.html")
+    fetch("footer.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("footer").innerHTML = t));
-    </script>
+</script>
 
-    <script src="js/script.js"></script>
-  </body>
+<script src="js/script.js"></script>
+</body>
 </html>

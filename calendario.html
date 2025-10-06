@@ -1,585 +1,585 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Chicago Bulls – Partidos</title>
-    <meta name="author" content="Garcia, Garcia, Volodarsky" />
+    <meta name="author" content="Garcia, Garcia, Volodarsky"/>
     <meta
-      name="description"
-      content="Listado de partidos de la temporada de Chicago Bulls con filtros por mes."
+            name="description"
+            content="Listado de partidos de la temporada de Chicago Bulls con filtros por mes."
     />
-    <meta name="keywords" content="Chicago Bulls, NBA, partidos, calendario" />
-    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="keywords" content="Chicago Bulls, NBA, partidos, calendario"/>
+    <link rel="icon" href="imagenes/logo-bulls.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+            rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- HEADER -->
-    <div id="header"></div>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!-- HEADER -->
+<div id="header"></div>
 
-    <main class="container">
-      <section id="calendario" class="cal-listing" aria-labelledby="titulo-cal">
+<main class="container">
+    <section id="calendario" class="cal-listing" aria-labelledby="titulo-cal">
         <h1 id="titulo-cal">Partidos de la temporada</h1>
 
         <!-- Filtros -->
         <form
-          class="cal-filters"
-          action="#"
-          method="get"
-          aria-label="Filtrar partidos"
+                class="cal-filters"
+                action="#"
+                method="get"
+                aria-label="Filtrar partidos"
         >
-          <label for="mes">Mes</label>
-          <select id="mes" name="mes">
-            <option value="">Todos</option>
-            <option value="1">Enero</option>
-            <option value="2">Febrero</option>
-            <option value="3">Marzo</option>
-            <option value="4">Abril</option>
-            <option value="5">Mayo</option>
-            <option value="6">Junio</option>
-            <option value="7">Julio</option>
-            <option value="8">Agosto</option>
-            <option value="9">Septiembre</option>
-            <option value="10">Octubre</option>
-            <option value="11">Noviembre</option>
-            <option value="12">Diciembre</option>
-          </select>
+            <label for="mes">Mes</label>
+            <select id="mes" name="mes">
+                <option value="">Todos</option>
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
         </form>
 
         <!-- Contador -->
         <p class="cal-count" aria-live="polite">
-          Mostrando <span id="calCount">0</span> partidos
+            Mostrando <span id="calCount">0</span> partidos
         </p>
 
         <!-- Lista de Partidos -->
         <ul id="partidos" class="games-list">
-          <li class="game-card" data-month="10">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">12</span><span class="mon">OCT</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">LAL</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Los Angeles Lakers</span>
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="10">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">18</span><span class="mon">OCT</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">BOS</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Boston Celtics</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:30</span>
-              <div class="meta">TD Garden · Boston</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="10">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">25</span><span class="mon">OCT</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">MIL</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Milwaukee Bucks</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="10">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">29</span><span class="mon">OCT</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">TOR</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Toronto Raptors</span>
-            </div>
-            <div class="game-right">
-              <span class="time">19:30</span>
-              <div class="meta">Scotiabank Arena · Toronto</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="11">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">02</span><span class="mon">NOV</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">NOP</span>
-              </div>
-              <span class="team-names"
-                >Chicago Bulls - New Orleans Pelicans</span
-              >
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="11">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">08</span><span class="mon">NOV</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">ATL</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Atlanta Hawks</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">State Farm Arena · Atlanta</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="12">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">05</span><span class="mon">DIC</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">SAC</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Sacramento Kings</span>
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="12">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">15</span><span class="mon">DIC</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">ORL</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Orlando Magic</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">Amway Center · Orlando</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="1">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">10</span><span class="mon">ENE</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">MIN</span>
-              </div>
-              <span class="team-names"
-                >Chicago Bulls - Minnesota Timberwolves</span
-              >
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">Target Center · Minneapolis</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="1">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">22</span><span class="mon">ENE</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">CHA</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Charlotte Hornets</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="2">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">09</span><span class="mon">FEB</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">BOS</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Boston Celtics</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:30</span>
-              <div class="meta">TD Garden · Boston</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="2">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">22</span><span class="mon">FEB</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">IND</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Indiana Pacers</span>
-            </div>
-            <div class="game-right">
-              <span class="time">19:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="3">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">10</span><span class="mon">MAR</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">GSW</span>
-              </div>
-              <span class="team-names"
-                >Chicago Bulls - Golden State Warriors</span
-              >
-            </div>
-            <div class="game-right">
-              <span class="time">22:00</span>
-              <div class="meta">Chase Center · San Francisco</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="3">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">25</span><span class="mon">MAR</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">MEM</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Memphis Grizzlies</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="4">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">02</span><span class="mon">ABR</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">HOU</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Houston Rockets</span>
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">Toyota Center · Houston</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="4">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">18</span><span class="mon">ABR</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">OKC</span>
-              </div>
-              <span class="team-names"
-                >Chicago Bulls - Oklahoma City Thunder</span
-              >
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="11">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">05</span><span class="mon">NOV</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">MIA</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Miami Heat</span>
-            </div>
-            <div class="game-right">
-              <span class="time">21:30</span>
-              <div class="meta">Kaseya Center · Miami</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="11">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">12</span><span class="mon">NOV</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">GSW</span>
-              </div>
-              <span class="team-names"
-                >Chicago Bulls - Golden State Warriors</span
-              >
-            </div>
-            <div class="game-right">
-              <span class="time">19:30</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="11">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">20</span><span class="mon">NOV</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">PHI</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Philadelphia 76ers</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">Wells Fargo Center · Philadelphia</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="12">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">02</span><span class="mon">DIC</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">BKN</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Brooklyn Nets</span>
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="12">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">10</span><span class="mon">DIC</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">DAL</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Dallas Mavericks</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:30</span>
-              <div class="meta">American Airlines Center · Dallas</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="12">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">22</span><span class="mon">DIC</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">NYK</span>
-              </div>
-              <span class="team-names">Chicago Bulls - New York Knicks</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">Madison Square Garden · New York</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="1">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">05</span><span class="mon">ENE</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">DEN</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Denver Nuggets</span>
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="1">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">15</span><span class="mon">ENE</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">SAS</span>
-              </div>
-              <span class="team-names">Chicago Bulls - San Antonio Spurs</span>
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">Frost Bank Center · San Antonio</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="2">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">03</span><span class="mon">FEB</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">TOR</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Toronto Raptors</span>
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="2">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">14</span><span class="mon">FEB</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">NOP</span>
-              </div>
-              <span class="team-names"
-                >Chicago Bulls - New Orleans Pelicans</span
-              >
-            </div>
-            <div class="game-right">
-              <span class="time">20:30</span>
-              <div class="meta">Smoothie King Center · New Orleans</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="3">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">01</span><span class="mon">MAR</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">PHX</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Phoenix Suns</span>
-            </div>
-            <div class="game-right">
-              <span class="time">21:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="3">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">18</span><span class="mon">MAR</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">UTA</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Utah Jazz</span>
-            </div>
-            <div class="game-right">
-              <span class="time">22:00</span>
-              <div class="meta">Delta Center · Salt Lake City</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="4">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">07</span><span class="mon">ABR</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">CLE</span>
-              </div>
-              <span class="team-names"
-                >Chicago Bulls - Cleveland Cavaliers</span
-              >
-            </div>
-            <div class="game-right">
-              <span class="time">20:00</span>
-              <div class="meta">United Center · Chicago</div>
-            </div>
-          </li>
-          <li class="game-card" data-month="4">
-            <div class="game-left">
-              <div class="game-date">
-                <span class="day">14</span><span class="mon">ABR</span>
-              </div>
-              <div class="game-vs">
-                <strong>CHI</strong> <span class="vs">vs</span>
-                <span class="opp">DET</span>
-              </div>
-              <span class="team-names">Chicago Bulls - Detroit Pistons</span>
-            </div>
-            <div class="game-right">
-              <span class="time">19:00</span>
-              <div class="meta">Little Caesars Arena · Detroit</div>
-            </div>
-          </li>
+            <li class="game-card" data-month="10">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">12</span><span class="mon">OCT</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">LAL</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Los Angeles Lakers</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="10">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">18</span><span class="mon">OCT</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">BOS</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Boston Celtics</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:30</span>
+                    <div class="meta">TD Garden · Boston</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="10">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">25</span><span class="mon">OCT</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">MIL</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Milwaukee Bucks</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="10">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">29</span><span class="mon">OCT</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">TOR</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Toronto Raptors</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">19:30</span>
+                    <div class="meta">Scotiabank Arena · Toronto</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="11">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">02</span><span class="mon">NOV</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">NOP</span>
+                    </div>
+                    <span class="team-names"
+                    >Chicago Bulls - New Orleans Pelicans</span
+                    >
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="11">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">08</span><span class="mon">NOV</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">ATL</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Atlanta Hawks</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">State Farm Arena · Atlanta</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="12">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">05</span><span class="mon">DIC</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">SAC</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Sacramento Kings</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="12">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">15</span><span class="mon">DIC</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">ORL</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Orlando Magic</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">Amway Center · Orlando</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="1">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">10</span><span class="mon">ENE</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">MIN</span>
+                    </div>
+                    <span class="team-names"
+                    >Chicago Bulls - Minnesota Timberwolves</span
+                    >
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">Target Center · Minneapolis</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="1">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">22</span><span class="mon">ENE</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">CHA</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Charlotte Hornets</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="2">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">09</span><span class="mon">FEB</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">BOS</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Boston Celtics</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:30</span>
+                    <div class="meta">TD Garden · Boston</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="2">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">22</span><span class="mon">FEB</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">IND</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Indiana Pacers</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">19:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="3">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">10</span><span class="mon">MAR</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">GSW</span>
+                    </div>
+                    <span class="team-names"
+                    >Chicago Bulls - Golden State Warriors</span
+                    >
+                </div>
+                <div class="game-right">
+                    <span class="time">22:00</span>
+                    <div class="meta">Chase Center · San Francisco</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="3">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">25</span><span class="mon">MAR</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">MEM</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Memphis Grizzlies</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="4">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">02</span><span class="mon">ABR</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">HOU</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Houston Rockets</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">Toyota Center · Houston</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="4">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">18</span><span class="mon">ABR</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">OKC</span>
+                    </div>
+                    <span class="team-names"
+                    >Chicago Bulls - Oklahoma City Thunder</span
+                    >
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="11">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">05</span><span class="mon">NOV</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">MIA</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Miami Heat</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">21:30</span>
+                    <div class="meta">Kaseya Center · Miami</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="11">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">12</span><span class="mon">NOV</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">GSW</span>
+                    </div>
+                    <span class="team-names"
+                    >Chicago Bulls - Golden State Warriors</span
+                    >
+                </div>
+                <div class="game-right">
+                    <span class="time">19:30</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="11">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">20</span><span class="mon">NOV</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">PHI</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Philadelphia 76ers</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">Wells Fargo Center · Philadelphia</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="12">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">02</span><span class="mon">DIC</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">BKN</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Brooklyn Nets</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="12">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">10</span><span class="mon">DIC</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">DAL</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Dallas Mavericks</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:30</span>
+                    <div class="meta">American Airlines Center · Dallas</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="12">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">22</span><span class="mon">DIC</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">NYK</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - New York Knicks</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">Madison Square Garden · New York</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="1">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">05</span><span class="mon">ENE</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">DEN</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Denver Nuggets</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="1">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">15</span><span class="mon">ENE</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">SAS</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - San Antonio Spurs</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">Frost Bank Center · San Antonio</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="2">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">03</span><span class="mon">FEB</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">TOR</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Toronto Raptors</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="2">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">14</span><span class="mon">FEB</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">NOP</span>
+                    </div>
+                    <span class="team-names"
+                    >Chicago Bulls - New Orleans Pelicans</span
+                    >
+                </div>
+                <div class="game-right">
+                    <span class="time">20:30</span>
+                    <div class="meta">Smoothie King Center · New Orleans</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="3">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">01</span><span class="mon">MAR</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">PHX</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Phoenix Suns</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">21:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="3">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">18</span><span class="mon">MAR</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">UTA</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Utah Jazz</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">22:00</span>
+                    <div class="meta">Delta Center · Salt Lake City</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="4">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">07</span><span class="mon">ABR</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">CLE</span>
+                    </div>
+                    <span class="team-names"
+                    >Chicago Bulls - Cleveland Cavaliers</span
+                    >
+                </div>
+                <div class="game-right">
+                    <span class="time">20:00</span>
+                    <div class="meta">United Center · Chicago</div>
+                </div>
+            </li>
+            <li class="game-card" data-month="4">
+                <div class="game-left">
+                    <div class="game-date">
+                        <span class="day">14</span><span class="mon">ABR</span>
+                    </div>
+                    <div class="game-vs">
+                        <strong>CHI</strong> <span class="vs">vs</span>
+                        <span class="opp">DET</span>
+                    </div>
+                    <span class="team-names">Chicago Bulls - Detroit Pistons</span>
+                </div>
+                <div class="game-right">
+                    <span class="time">19:00</span>
+                    <div class="meta">Little Caesars Arena · Detroit</div>
+                </div>
+            </li>
         </ul>
 
         <!-- Mensaje vacío -->
         <p id="calEmpty" class="cal-empty" hidden>
-          No hay partidos que coincidan con el filtro.
+            No hay partidos que coincidan con el filtro.
         </p>
-      </section>
+    </section>
 
-      <!-- SPONSORS -->
-      <div id="sponsors"></div>
-    </main>
+    <!-- SPONSORS -->
+    <div id="sponsors"></div>
+</main>
 
-    <!-- FOOTER -->
-    <div id="footer"></div>
+<!-- FOOTER -->
+<div id="footer"></div>
 
-    <script>
-      // Inserta los componentes externos
-      fetch("header.html")
+<script>
+    // Inserta los componentes externos
+    fetch("header.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("header").innerHTML = t));
-      fetch("sponsors.html")
+    fetch("sponsors.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("sponsors").innerHTML = t));
-      fetch("footer.html")
+    fetch("footer.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("footer").innerHTML = t));
-    </script>
-    <script src="js/script.js"></script>
-  </body>
+</script>
+<script src="js/script.js"></script>
+</body>
 </html>

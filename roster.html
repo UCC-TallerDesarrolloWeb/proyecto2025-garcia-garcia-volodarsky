@@ -1,348 +1,348 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Chicago Bulls - Roster</title>
-    <meta name="author" content="Garcia, Garcia, Volodarsky" />
+    <meta name="author" content="Garcia, Garcia, Volodarsky"/>
     <meta
-      name="description"
-      content="Roster oficial de la FanPage Chicago Bulls"
+            name="description"
+            content="Roster oficial de la FanPage Chicago Bulls"
     />
-    <meta name="keywords" content="Chicago Bulls, NBA, roster, jugadores" />
-    <link rel="icon" href="imagenes/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta name="keywords" content="Chicago Bulls, NBA, roster, jugadores"/>
+    <link rel="icon" href="imagenes/logo-bulls.png" type="image/png"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
-      rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap"
+            rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/style.css" />
-  </head>
-  <body>
-    <!-- HEADER -->
-    <div id="header"></div>
+    <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<!-- HEADER -->
+<div id="header"></div>
 
-    <main class="container">
-      <!-- ROSTER CON CARDS -->
-      <section id="roster" class="roster" aria-labelledby="titulo-roster">
+<main class="container">
+    <!-- ROSTER CON CARDS -->
+    <section id="roster" class="roster" aria-labelledby="titulo-roster">
         <h1 id="titulo-roster">Roster</h1>
 
         <p class="roster-legend">
-          <strong>Posiciones:</strong> Base · Escolta · Alero · Ala-Pívot ·
-          Pívot · Entrenador
+            <strong>Posiciones:</strong> Base · Escolta · Alero · Ala-Pívot ·
+            Pívot · Entrenador
         </p>
 
         <form
-          class="roster-filters"
-          action="#"
-          method="get"
-          aria-label="Filtrar roster"
+                class="roster-filters"
+                action="#"
+                method="get"
+                aria-label="Filtrar roster"
         >
-          <label for="pos">Filtrar por posición</label>
-          <select id="pos" name="pos">
-            <option value="">Todas</option>
-            <option value="Base">Base</option>
-            <option value="Escolta">Escolta</option>
-            <option value="Alero">Alero</option>
-            <option value="Ala-Pívot">Ala-Pívot</option>
-            <option value="Pívot">Pívot</option>
-            <option value="Entrenador">Entrenadores</option>
-          </select>
+            <label for="pos">Filtrar por posición</label>
+            <select id="pos" name="pos">
+                <option value="">Todas</option>
+                <option value="Base">Base</option>
+                <option value="Escolta">Escolta</option>
+                <option value="Alero">Alero</option>
+                <option value="Ala-Pívot">Ala-Pívot</option>
+                <option value="Pívot">Pívot</option>
+                <option value="Entrenador">Entrenadores</option>
+            </select>
         </form>
 
         <div class="roster-grid" id="rosterGrid">
-          <article class="card player-card" data-pos="Base">
-            <img src="imagenes/okoro.png" alt="Isaac Okoro" class="card-img" />
-            <h3 class="card-title">Isaac Okoro</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Base</li>
-              <li><strong>Altura:</strong> 1.96 m</li>
-              <li><strong>Peso:</strong> 102 kg</li>
-              <li><strong>Edad:</strong> 23</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Base">
-            <img src="imagenes/GIDDEY.jpg" alt="Josh Giddey" class="card-img" />
-            <h3 class="card-title">Josh Giddey</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Base</li>
-              <li><strong>Altura:</strong> 2.03 m</li>
-              <li><strong>Peso:</strong> 93 kg</li>
-              <li><strong>Edad:</strong> 22</li>
-              <li><strong>Nacionalidad:</strong> AUS</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Escolta">
-            <img
-              src="imagenes/buzelis.png"
-              alt="Matas Buzelis"
-              class="card-img"
-            />
-            <h3 class="card-title">Matas Buzelis</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Escolta</li>
-              <li><strong>Altura:</strong> 2.08 m</li>
-              <li><strong>Peso:</strong> 95 kg</li>
-              <li><strong>Edad:</strong> 20</li>
-              <li><strong>Nacionalidad:</strong> LTU</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Alero">
-            <img
-              src="imagenes/young.png"
-              alt="Thaddeus Young"
-              class="card-img"
-            />
-            <h3 class="card-title">Thaddeus Young</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Alero</li>
-              <li><strong>Altura:</strong> 2.03 m</li>
-              <li><strong>Peso:</strong> 104 kg</li>
-              <li><strong>Edad:</strong> 37</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Alero">
-            <img
-              src="imagenes/willians.png"
-              alt="Patrick Williams"
-              class="card-img"
-            />
-            <h3 class="card-title">Patrick Williams</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Alero</li>
-              <li><strong>Altura:</strong> 2.01 m</li>
-              <li><strong>Peso:</strong> 104 kg</li>
-              <li><strong>Edad:</strong> 23</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Ala-Pívot">
-            <img
-              src="imagenes/carter.png"
-              alt="Wendell Carter Jr."
-              class="card-img"
-            />
-            <h3 class="card-title">Wendell Carter Jr.</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Ala-Pívot</li>
-              <li><strong>Altura:</strong> 2.08 m</li>
-              <li><strong>Peso:</strong> 122 kg</li>
-              <li><strong>Edad:</strong> 25</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Pívot">
-            <img
-              src="imagenes/jalen smith.png"
-              alt="Jalen Smith"
-              class="card-img"
-            />
-            <h3 class="card-title">Jalen Smith</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Pívot</li>
-              <li><strong>Altura:</strong> 2.08 m</li>
-              <li><strong>Peso:</strong> 104 kg</li>
-              <li><strong>Edad:</strong> 24</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Base">
-            <img
-              src="imagenes/dosunmu.png"
-              alt="Ayo Dosunmu"
-              class="card-img"
-            />
-            <h3 class="card-title">Ayo Dosunmu</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Base</li>
-              <li><strong>Altura:</strong> 1.96 m</li>
-              <li><strong>Peso:</strong> 91 kg</li>
-              <li><strong>Edad:</strong> 24</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Base">
-            <img
-              src="imagenes/tre jones.png"
-              alt="Tre Jones"
-              class="card-img"
-            />
-            <h3 class="card-title">Tre Jones</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Base</li>
-              <li><strong>Altura:</strong> 1.85 m</li>
-              <li><strong>Peso:</strong> 84 kg</li>
-              <li><strong>Edad:</strong> 25</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Escolta">
-            <img src="imagenes/white.png" alt="Coby White" class="card-img" />
-            <h3 class="card-title">Coby White</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Escolta</li>
-              <li><strong>Altura:</strong> 1.96 m</li>
-              <li><strong>Peso:</strong> 88 kg</li>
-              <li><strong>Edad:</strong> 24</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Escolta">
-            <img src="imagenes/terry.png" alt="Dalen Terry" class="card-img" />
-            <h3 class="card-title">Dalen Terry</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Escolta</li>
-              <li><strong>Altura:</strong> 2.01 m</li>
-              <li><strong>Peso:</strong> 88 kg</li>
-              <li><strong>Edad:</strong> 22</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Alero">
-            <img
-              src="imagenes/huerter.png"
-              alt="Kevin Huerter"
-              class="card-img"
-            />
-            <h3 class="card-title">Kevin Huerter</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Alero</li>
-              <li><strong>Altura:</strong> 2.01 m</li>
-              <li><strong>Peso:</strong> 86 kg</li>
-              <li><strong>Edad:</strong> 26</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Alero">
-            <img
-              src="imagenes/collins.png"
-              alt="John Collins"
-              class="card-img"
-            />
-            <h3 class="card-title">John Collins</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Alero</li>
-              <li><strong>Altura:</strong> 2.06 m</li>
-              <li><strong>Peso:</strong> 107 kg</li>
-              <li><strong>Edad:</strong> 27</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Ala-Pívot">
-            <img
-              src="imagenes/miller.png"
-              alt="Brandon Miller"
-              class="card-img"
-            />
-            <h3 class="card-title">Brandon Miller</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Ala-Pívot</li>
-              <li><strong>Altura:</strong> 2.06 m</li>
-              <li><strong>Peso:</strong> 91 kg</li>
-              <li><strong>Edad:</strong> 22</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Ala-Pívot">
-            <img
-              src="imagenes/liddel.png"
-              alt="E.J. Liddell"
-              class="card-img"
-            />
-            <h3 class="card-title">E.J. Liddell</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Ala-Pívot</li>
-              <li><strong>Altura:</strong> 2.01 m</li>
-              <li><strong>Peso:</strong> 109 kg</li>
-              <li><strong>Edad:</strong> 23</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Pívot">
-            <img
-              src="imagenes/vucevic.png"
-              alt="Nikola Vucevic"
-              class="card-img"
-            />
-            <h3 class="card-title">Nikola Vucevic</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Pívot</li>
-              <li><strong>Altura:</strong> 2.13 m</li>
-              <li><strong>Peso:</strong> 120 kg</li>
-              <li><strong>Edad:</strong> 34</li>
-              <li><strong>Nacionalidad:</strong> MNE</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Pívot">
-            <img
-              src="imagenes/sanogo.png"
-              alt="Adama Sanogo"
-              class="card-img"
-            />
-            <h3 class="card-title">Adama Sanogo</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Pívot</li>
-              <li><strong>Altura:</strong> 2.06 m</li>
-              <li><strong>Peso:</strong> 111 kg</li>
-              <li><strong>Edad:</strong> 22</li>
-              <li><strong>Nacionalidad:</strong> MLI</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Pívot">
-            <img
-              src="imagenes/essengue.png"
-              alt="Armel Essengue"
-              class="card-img"
-            />
-            <h3 class="card-title">Armel Essengue</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Pívot</li>
-              <li><strong>Altura:</strong> 2.05 m</li>
-              <li><strong>Peso:</strong> 115 kg</li>
-              <li><strong>Edad:</strong> 41</li>
-              <li><strong>Nacionalidad:</strong> CMR</li>
-            </ul>
-          </article>
-          <article class="card player-card" data-pos="Entrenador">
-            <img
-              src="imagenes/coach.png"
-              alt="Billy Donovan"
-              class="card-img"
-            />
-            <h3 class="card-title">Billy Donovan</h3>
-            <ul class="card-info">
-              <li><strong>Posición:</strong> Entrenador</li>
-              <li><strong>Altura:</strong> 1.80 m</li>
-              <li><strong>Peso:</strong> 78 kg</li>
-              <li><strong>Edad:</strong> 60</li>
-              <li><strong>Nacionalidad:</strong> USA</li>
-            </ul>
-          </article>
+            <article class="card player-card" data-pos="Base">
+                <img src="imagenes/okoro.png" alt="Isaac Okoro" class="card-img"/>
+                <h3 class="card-title">Isaac Okoro</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Base</li>
+                    <li><strong>Altura:</strong> 1.96 m</li>
+                    <li><strong>Peso:</strong> 102 kg</li>
+                    <li><strong>Edad:</strong> 23</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Base">
+                <img src="imagenes/GIDDEY.jpg" alt="Josh Giddey" class="card-img"/>
+                <h3 class="card-title">Josh Giddey</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Base</li>
+                    <li><strong>Altura:</strong> 2.03 m</li>
+                    <li><strong>Peso:</strong> 93 kg</li>
+                    <li><strong>Edad:</strong> 22</li>
+                    <li><strong>Nacionalidad:</strong> AUS</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Escolta">
+                <img
+                        src="imagenes/buzelis.png"
+                        alt="Matas Buzelis"
+                        class="card-img"
+                />
+                <h3 class="card-title">Matas Buzelis</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Escolta</li>
+                    <li><strong>Altura:</strong> 2.08 m</li>
+                    <li><strong>Peso:</strong> 95 kg</li>
+                    <li><strong>Edad:</strong> 20</li>
+                    <li><strong>Nacionalidad:</strong> LTU</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Alero">
+                <img
+                        src="imagenes/young.png"
+                        alt="Thaddeus Young"
+                        class="card-img"
+                />
+                <h3 class="card-title">Thaddeus Young</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Alero</li>
+                    <li><strong>Altura:</strong> 2.03 m</li>
+                    <li><strong>Peso:</strong> 104 kg</li>
+                    <li><strong>Edad:</strong> 37</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Alero">
+                <img
+                        src="imagenes/willians.png"
+                        alt="Patrick Williams"
+                        class="card-img"
+                />
+                <h3 class="card-title">Patrick Williams</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Alero</li>
+                    <li><strong>Altura:</strong> 2.01 m</li>
+                    <li><strong>Peso:</strong> 104 kg</li>
+                    <li><strong>Edad:</strong> 23</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Ala-Pívot">
+                <img
+                        src="imagenes/carter.png"
+                        alt="Wendell Carter Jr."
+                        class="card-img"
+                />
+                <h3 class="card-title">Wendell Carter Jr.</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Ala-Pívot</li>
+                    <li><strong>Altura:</strong> 2.08 m</li>
+                    <li><strong>Peso:</strong> 122 kg</li>
+                    <li><strong>Edad:</strong> 25</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Pívot">
+                <img
+                        src="imagenes/jalen smith.png"
+                        alt="Jalen Smith"
+                        class="card-img"
+                />
+                <h3 class="card-title">Jalen Smith</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Pívot</li>
+                    <li><strong>Altura:</strong> 2.08 m</li>
+                    <li><strong>Peso:</strong> 104 kg</li>
+                    <li><strong>Edad:</strong> 24</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Base">
+                <img
+                        src="imagenes/dosunmu.png"
+                        alt="Ayo Dosunmu"
+                        class="card-img"
+                />
+                <h3 class="card-title">Ayo Dosunmu</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Base</li>
+                    <li><strong>Altura:</strong> 1.96 m</li>
+                    <li><strong>Peso:</strong> 91 kg</li>
+                    <li><strong>Edad:</strong> 24</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Base">
+                <img
+                        src="imagenes/tre jones.png"
+                        alt="Tre Jones"
+                        class="card-img"
+                />
+                <h3 class="card-title">Tre Jones</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Base</li>
+                    <li><strong>Altura:</strong> 1.85 m</li>
+                    <li><strong>Peso:</strong> 84 kg</li>
+                    <li><strong>Edad:</strong> 25</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Escolta">
+                <img src="imagenes/white.png" alt="Coby White" class="card-img"/>
+                <h3 class="card-title">Coby White</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Escolta</li>
+                    <li><strong>Altura:</strong> 1.96 m</li>
+                    <li><strong>Peso:</strong> 88 kg</li>
+                    <li><strong>Edad:</strong> 24</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Escolta">
+                <img src="imagenes/terry.png" alt="Dalen Terry" class="card-img"/>
+                <h3 class="card-title">Dalen Terry</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Escolta</li>
+                    <li><strong>Altura:</strong> 2.01 m</li>
+                    <li><strong>Peso:</strong> 88 kg</li>
+                    <li><strong>Edad:</strong> 22</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Alero">
+                <img
+                        src="imagenes/huerter.png"
+                        alt="Kevin Huerter"
+                        class="card-img"
+                />
+                <h3 class="card-title">Kevin Huerter</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Alero</li>
+                    <li><strong>Altura:</strong> 2.01 m</li>
+                    <li><strong>Peso:</strong> 86 kg</li>
+                    <li><strong>Edad:</strong> 26</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Alero">
+                <img
+                        src="imagenes/collins.png"
+                        alt="John Collins"
+                        class="card-img"
+                />
+                <h3 class="card-title">John Collins</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Alero</li>
+                    <li><strong>Altura:</strong> 2.06 m</li>
+                    <li><strong>Peso:</strong> 107 kg</li>
+                    <li><strong>Edad:</strong> 27</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Ala-Pívot">
+                <img
+                        src="imagenes/miller.png"
+                        alt="Brandon Miller"
+                        class="card-img"
+                />
+                <h3 class="card-title">Brandon Miller</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Ala-Pívot</li>
+                    <li><strong>Altura:</strong> 2.06 m</li>
+                    <li><strong>Peso:</strong> 91 kg</li>
+                    <li><strong>Edad:</strong> 22</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Ala-Pívot">
+                <img
+                        src="imagenes/liddel.png"
+                        alt="E.J. Liddell"
+                        class="card-img"
+                />
+                <h3 class="card-title">E.J. Liddell</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Ala-Pívot</li>
+                    <li><strong>Altura:</strong> 2.01 m</li>
+                    <li><strong>Peso:</strong> 109 kg</li>
+                    <li><strong>Edad:</strong> 23</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Pívot">
+                <img
+                        src="imagenes/vucevic.png"
+                        alt="Nikola Vucevic"
+                        class="card-img"
+                />
+                <h3 class="card-title">Nikola Vucevic</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Pívot</li>
+                    <li><strong>Altura:</strong> 2.13 m</li>
+                    <li><strong>Peso:</strong> 120 kg</li>
+                    <li><strong>Edad:</strong> 34</li>
+                    <li><strong>Nacionalidad:</strong> MNE</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Pívot">
+                <img
+                        src="imagenes/sanogo.png"
+                        alt="Adama Sanogo"
+                        class="card-img"
+                />
+                <h3 class="card-title">Adama Sanogo</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Pívot</li>
+                    <li><strong>Altura:</strong> 2.06 m</li>
+                    <li><strong>Peso:</strong> 111 kg</li>
+                    <li><strong>Edad:</strong> 22</li>
+                    <li><strong>Nacionalidad:</strong> MLI</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Pívot">
+                <img
+                        src="imagenes/essengue.png"
+                        alt="Armel Essengue"
+                        class="card-img"
+                />
+                <h3 class="card-title">Armel Essengue</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Pívot</li>
+                    <li><strong>Altura:</strong> 2.05 m</li>
+                    <li><strong>Peso:</strong> 115 kg</li>
+                    <li><strong>Edad:</strong> 41</li>
+                    <li><strong>Nacionalidad:</strong> CMR</li>
+                </ul>
+            </article>
+            <article class="card player-card" data-pos="Entrenador">
+                <img
+                        src="imagenes/coach.png"
+                        alt="Billy Donovan"
+                        class="card-img"
+                />
+                <h3 class="card-title">Billy Donovan</h3>
+                <ul class="card-info">
+                    <li><strong>Posición:</strong> Entrenador</li>
+                    <li><strong>Altura:</strong> 1.80 m</li>
+                    <li><strong>Peso:</strong> 78 kg</li>
+                    <li><strong>Edad:</strong> 60</li>
+                    <li><strong>Nacionalidad:</strong> USA</li>
+                </ul>
+            </article>
         </div>
-      </section>
+    </section>
 
-      <!-- SPONSORS -->
-      <div id="sponsors"></div>
-    </main>
+    <!-- SPONSORS -->
+    <div id="sponsors"></div>
+</main>
 
-    <!-- FOOTER -->
-    <div id="footer"></div>
+<!-- FOOTER -->
+<div id="footer"></div>
 
-    <script>
-      // Inserta los componentes externos
-      fetch("header.html")
+<script>
+    // Inserta los componentes externos
+    fetch("header.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("header").innerHTML = t));
-      fetch("sponsors.html")
+    fetch("sponsors.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("sponsors").innerHTML = t));
-      fetch("footer.html")
+    fetch("footer.html")
         .then((r) => r.text())
         .then((t) => (document.getElementById("footer").innerHTML = t));
-    </script>
-    <script src="js/script.js"></script>
-  </body>
+</script>
+<script src="js/script.js"></script>
+</body>
 </html>
