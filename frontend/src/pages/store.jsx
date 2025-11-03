@@ -27,6 +27,7 @@ const cerrarModal = () => {
 
   return (
     <>
+    <h2>Tienda</h2>
     <section className="store">
       {products.map((prod, id) => (
         <div key={id} className="cardProduct">

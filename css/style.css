@@ -175,6 +175,7 @@ h1 {
     font-weight: 600;
     transition: background-color 0.2s ease;
     user-select: none;
+    display: none;
 }
 
 .cart-counter:hover {
@@ -217,7 +218,6 @@ h1 {
     margin-bottom: 40px;
 }
 
-/* NOTICIAS */
 .visually-hidden {
     position: absolute;
     clip: rect(0 0 0 0);
@@ -1262,6 +1262,14 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* Normalize product images placed inside .prod-img */
+.prod-img img {
+    width: 100%;
+    max-width: 180px;
+    display: block;
+    margin: 0 auto;
+}
+
 .prod-title {
     margin-bottom: 6px;
 }
@@ -1507,6 +1515,13 @@ h1 {
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+}
+
+/* Empty cart message styling */
+.cart-empty {
+    text-align: center;
+    color: #ccc;
+    padding: 20px;
 }
 
 

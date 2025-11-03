@@ -1,5 +1,36 @@
-document.addEventListener("DOMContentLoaded", () => {
+// Includes: cargar header/sponsors/footer desde fragments
+async function includeFragments() {
+    const includes = [
+        { url: 'header.html', id: 'header' },
+        { url: 'sponsors.html', id: 'sponsors' },
+        { url: 'footer.html', id: 'footer' }
+    ];
+
+    async function fetchAndInsert(url, id) {
+        try {
+            const res = await fetch(url);
+            if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+            const html = await res.text();
+            const placeholder = document.getElementById(id);
+            if (placeholder) placeholder.innerHTML = html;
+            return { url, ok: true };
+        } catch (err) {
+            console.error('Include failed for', url, err);
+            return { url, ok: false, error: String(err) };
+        }
+    }
+
+    // Ejecutar en paralelo
+    const results = await Promise.all(includes.map(i => fetchAndInsert(i.url, i.id)));
+    document.dispatchEvent(new CustomEvent('includes:loaded', { detail: { results } }));
+    return results;
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
     console.log("Página lista ✅");
+
+    // Asegurar que los includes se han cargado antes de inicializar lógica que depende del header
+    await includeFragments();
 
     // Inicializar carrito si estamos en shop.html
     if (window.location.pathname.includes('shop.html')) {
@@ -208,7 +239,7 @@ function updateCartDisplay() {
 
     if (cartItems) {
         if (cart.length === 0) {
-            cartItems.innerHTML = '<p style="text-align: center; color: #ccc; padding: 20px;">Tu carrito está vacío</p>';
+            cartItems.innerHTML = '<p class="cart-empty">Tu carrito está vacío</p>';
         } else {
             cartItems.innerHTML = cart.map(item => `
         <div class="cart-item">
