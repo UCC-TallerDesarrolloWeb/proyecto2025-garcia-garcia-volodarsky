@@ -159,10 +159,9 @@ let cartOpen = false; // Asegurar que esté cerrado por defecto
 // Cargar carrito desde localStorage al inicializar
 function loadCart() {
     const savedCart = localStorage.getItem('bullsCart');
-    if (savedCart) {
-        cart = JSON.parse(savedCart);
-        updateCartDisplay();
-    }
+    cart = savedCart ? JSON.parse(savedCart) : [];
+    // Always update the cart display so UI (counter/icon) reflects current state
+    updateCartDisplay();
     // Asegurar que el carrito esté cerrado al cargar
     const sidebar = document.getElementById('cartSidebar');
     const overlay = document.getElementById('cartOverlay');

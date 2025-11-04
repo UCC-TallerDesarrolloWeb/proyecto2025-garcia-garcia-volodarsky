@@ -1,32 +1,39 @@
-}# FanPage Chicago Bulls
+# FanPage Chicago Bulls
 
-**Proyecto del Taller de Desarrollo Web – **  
-Sitio web dedicado a los Chicago Bulls, aplicando conceptos de **HTML5, CSS3 y JavaScript** para la construcción de una fanpage completa con diseño responsive.
+**Proyecto del Taller de Desarrollo Web**
+
+Sitio web dedicado a los Chicago Bulls que aplica conceptos de **HTML5**, **CSS3** y **JavaScript** para construir una fanpage completa y responsive.
 
 ---
 
 ## Índice
+
 1. [Autores](#autores)
-2. [Link del Proyecto](#link-del-proyecto)
-3. [Contenido de la Página](#contenido-de-la-página)
-4. [Tecnologías Usadas](#tecnologías-usadas)
+2. [Enlace del proyecto](#enlace-del-proyecto)
+3. [Contenido de la página](#contenido-de-la-página)
+4. [Tecnologías usadas](#tecnolog%C3%ADas-usadas)
 
 ---
 
 ## Autores
-- **Juan Ignacio García**
-- **Francisco García**
-- **Tomás Volodarsky**
+
+| Nombre |
+|---|
+| Juan Ignacio García |
+| Francisco García |
+| Tomás Volodarsky |
 
 ---
 
-## Link del Proyecto
-El sitio está publicado mediante **GitHub Pages** desde un *fork* del repositorio original, para permitir el despliegue desde una cuenta personal (GitHub Pages solo permite publicar sitios desde repositorios propios).
+## Enlace del proyecto
 
-🔗 **Enlace:** [https://tomyvolo.github.io/proyecto2025-garcia-garcia-volodarsky/](https://tomyvolo.github.io/proyecto2025-garcia-garcia-volodarsky/)
+El sitio está publicado mediante **GitHub Pages** desde un fork del repositorio para permitir el despliegue desde una cuenta personal.
+
+🔗 Enlace: <https://tomyvolo.github.io/proyecto2025-garcia-garcia-volodarsky/>
+
 ---
 
-## Contenido de la Página
+## Contenido de la página
 
 ### Home
 - Hero con título principal
@@ -39,11 +46,9 @@ El sitio está publicado mediante **GitHub Pages** desde un *fork* del repositor
 - Filtro por posición
 - Plantilla del equipo (jugadores y entrenador)
 
-
 ### Calendario (`/calendario.html`)
-* Filtro por mes
+- Filtro por mes
 - Listado de partidos de la temporada
-
 
 ### Historia (`/historia.html`)
 - Línea temporal con momentos icónicos del equipo
@@ -60,8 +65,11 @@ El sitio está publicado mediante **GitHub Pages** desde un *fork* del repositor
 
 ---
 
-## Tecnologías Usadas
-- **HTML5** → estructura semántica de todas las páginas
-- **CSS3** → estilos responsivos y layout con Grid / Flexbox
-- **JavaScript ** → funcionalidades dinámicas (filtros, carrito, header/footer)
-- **Markdown** → documentación del proyecto (README)
+## Tecnologías usadas
+
+| Tecnología | Uso |
+|---|---|
+| HTML5 | Estructura semántica de las páginas |
+| CSS3 | Estilos responsivos y layout (Grid / Flexbox) |
+| JavaScript | Funcionalidades dinámicas (filtros, carrito, includes) |
+| Markdown | Documentación (README) |
