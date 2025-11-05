@@ -1,4 +1,4 @@
-/* SHOP PRODUCT IMAGES */
+/* IMÁGENES PRODUCTOS */
 .shop-grid .prod-img {
     width: 100%;
     height: 180px;
@@ -17,6 +17,8 @@
     object-fit: cover;
     border-radius: 12px;
     display: block;
+    max-width: 180px;
+    margin: 0 auto;
 }
 
 /* Cards del roster: tamaño uniforme */
@@ -166,23 +168,10 @@ h1 {
     text-decoration: underline;
 }
 
-/* Cart counter */
-.cart-counter {
-    background: rgba(255, 255, 255, 0.15);
-    padding: 6px 12px;
-    border-radius: 20px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: background-color 0.2s ease;
-    user-select: none;
-    display: none;
-}
+/* Contador carrito: definición completa abajo en la sección CARRITO.
+    Quité la versión duplicada de la cabecera para no liar reglas. */
 
-.cart-counter:hover {
-    background: rgba(255, 255, 255, 0.25);
-}
-
-/* Menu hamburguesa */
+/* MENU HAMBURGUESA */
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -279,6 +268,58 @@ h1 {
     font-weight: 700;
     border-radius: 8px;
     padding: 6px 14px;
+/* ===== Reglas por ID (añadidas para elementos únicos) ===== */
+/* SIDEBAR CARRITO */
+#cartSidebar {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 340px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -6px 0 18px rgba(0,0,0,.12);
+  transform: translateX(100%);
+  transition: transform .25s ease;
+  z-index: 1200;
+}
+#cartSidebar.open { transform: translateX(0); }
+
+/* OVERLAY DEL CARRITO */
+#cartOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s;
+  z-index: 1100;
+}
+#cartOverlay.open { opacity: 1; pointer-events: auto; }
+
+/* CONTADOR EN HEADER (ID) */
+#cartCounter { display: none; position: relative; }
+#cartCounter .badge {
+  position: absolute;
+  right: -6px;
+  top: -6px;
+  background:#e53935;
+  color:#fff;
+  border-radius:50%;
+  padding:2px 6px;
+  font-size:12px;
+}
+
+/* BOTÓN MENU (ID) */
+#menuToggle { cursor: pointer; }
+
+/* CHECKOUT Y MODAL ÉXITO */
+#checkoutForm { max-width:700px; margin:0 auto; padding:1rem; }
+#successModal { display:none; position:fixed; inset:0; align-items:center; justify-content:center; z-index:1300; }
+#successModal.open { display:flex; }
+#successModal .box { background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,.2); }
+
+/* NOTA: evita atributos style="..." en HTML. Si falta algún ID en el HTML,
+    añádelo en el fragment (`header.html`, `shop.html`) correspondiente. */
     font-size: 1.1rem;
 }
 
@@ -342,7 +383,7 @@ h1 {
 .btn.primary:hover {
     filter: brightness(1.08);
 }
-
+ 
 /* SPONSORS */
 .sponsors {
     margin: 40px 0;
@@ -602,9 +643,7 @@ h1 {
     }
 }
 
-/* ==========================
-   ROSTER (tabla + filtros)
-   ========================== */
+/* ROSTER */
 .roster-legend {
     color: #d0d0d0;
     margin-bottom: 10px;
@@ -710,9 +749,7 @@ h1 {
     text-align: left;
 }
 
-/* ==========================
-   CALENDARIO – Lista y filtros
-   ========================== */
+/* CALENDARIO */
 .cal-filters {
     display: flex;
     align-items: center;
@@ -883,9 +920,7 @@ h1 {
     margin-bottom: 2px;
 }
 
-/* ==========================
-   HISTORIA – Sub-landing
-   ========================== */
+/* HISTORIA */
 .historia .page-header {
     margin-bottom: 16px;
 }
@@ -1080,9 +1115,7 @@ h1 {
 
 }
 
-/* ==========================
-   NOSOTROS — estética mejorada
-   ========================== */
+/* NOSOTROS */
 .nosotros .n-head {
     text-align: center;
     margin-bottom: 18px;
@@ -1206,10 +1239,8 @@ h1 {
         max-width: 100%;
     }
 }
-
-/* ==========================
-   SHOP – según wireframe
-   ========================== */
+ 
+/* TIENDA */
 .shop-page h1 {
     text-align: center;
     margin-bottom: 10px;
@@ -1262,13 +1293,7 @@ h1 {
     margin-bottom: 10px;
 }
 
-/* Normalize product images placed inside .prod-img */
-.prod-img img {
-    width: 100%;
-    max-width: 180px;
-    display: block;
-    margin: 0 auto;
-}
+/* Normalización de imágenes: ya queda en .shop-grid .prod-img img */
 
 .prod-title {
     margin-bottom: 6px;
@@ -1314,20 +1339,26 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
-
-/* ==========================
-   CARRITO LATERAL
-   ========================== */
-.cart-counter {
+ 
+/* CARRITO LATERAL */
+.cart-counter, #cartCounter {
     background: #fff;
     color: #ce1141;
     padding: 8px 12px;
     border-radius: 8px;
     font-weight: 700;
     cursor: pointer;
+    /* hidden by default; shown only on shop page */
+    display: none;
 }
 
-.cart-sidebar {
+/* Show cart counter only on the shop page container/body */
+.shop-page .cart-counter, .shop-page #cartCounter,
+body.shop-page .cart-counter, body.shop-page #cartCounter {
+    display: inline-block;
+}
+
+.cart-sidebar, #cartSidebar {
     position: fixed;
     top: 0;
     right: -450px;
@@ -1341,7 +1372,7 @@ h1 {
     flex-direction: column;
 }
 
-.cart-sidebar.open {
+.cart-sidebar.open, #cartSidebar.open {
     right: 0;
 }
 
@@ -1504,7 +1535,7 @@ h1 {
     box-shadow: 0 4px 12px rgba(206, 17, 65, 0.3);
 }
 
-.cart-overlay {
+.cart-overlay, #cartOverlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -1517,7 +1548,7 @@ h1 {
     transition: all 0.3s ease;
 }
 
-/* Empty cart message styling */
+/* Mensaje de carrito vacío */
 .cart-empty {
     text-align: center;
     color: #ccc;
@@ -1526,7 +1557,7 @@ h1 {
 
 
 @media (max-width: 640px) {
-    .cart-sidebar {
+    .cart-sidebar, #cartSidebar {
         width: 350px;
         max-width: 90vw;
     }
@@ -1543,9 +1574,7 @@ h1 {
     }
 }
 
-/* ==========================
-   CHECKOUT PAGE
-   ========================== */
+/* CHECKOUT PAGE */
 .checkout-page h1 {
     text-align: center;
     margin-bottom: 30px;
@@ -1735,9 +1764,7 @@ h1 {
     }
 }
 
-/* ===============================
-   RESPONSIVE MEJORADO (básico)
-   =============================== */
+/* RESPONSIVE */
 
 /* Tablets */
 @media (max-width: 768px) {
@@ -1750,7 +1777,7 @@ h1 {
         gap: 20px;
     }
 
-    .cart-sidebar {
+    .cart-sidebar, #cartSidebar {
         width: 320px;
     }
 
@@ -1795,7 +1822,7 @@ h1 {
         order: 3;
     }
 
-    .cart-counter {
+    .cart-counter, #cartCounter {
         order: 2;
         margin-right: 10px;
     }

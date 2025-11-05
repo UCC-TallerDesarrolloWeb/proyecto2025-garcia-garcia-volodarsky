@@ -1,61 +1,69 @@
-// Includes: cargar header/sponsors/footer desde fragments
-async function includeFragments() {
+/**
+ * Carga fragmentos HTML (header, sponsors, footer) usando XHR y callbacks.
+ * Evita el uso de Promises/async para ajustarse al temario.
+ * @method includeFragments
+ * @param {Function} [done] Callback que se ejecuta cuando todos los fragmentos se insertan.
+ * @returns {void}
+ */
+const includeFragments = (done) => {
     const includes = [
         { url: 'header.html', id: 'header' },
         { url: 'sponsors.html', id: 'sponsors' },
         { url: 'footer.html', id: 'footer' }
     ];
 
-    async function fetchAndInsert(url, id) {
-        try {
-            const res = await fetch(url);
-            if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
-            const html = await res.text();
+    let remaining = includes.length;
+
+    const fetchAndInsert = (url, id) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url);
+        xhr.onload = function () {
             const placeholder = document.getElementById(id);
-            if (placeholder) placeholder.innerHTML = html;
-            return { url, ok: true };
-        } catch (err) {
-            console.error('Include failed for', url, err);
-            return { url, ok: false, error: String(err) };
-        }
-    }
+            if (placeholder) placeholder.innerHTML = xhr.responseText;
+            remaining -= 1;
+            if (remaining <= 0 && typeof done === 'function') done();
+        };
+        xhr.onerror = function (e) {
+            console.error('Include failed for', url, e);
+            remaining -= 1;
+            if (remaining <= 0 && typeof done === 'function') done();
+        };
+        xhr.send();
+    };
 
-    // Ejecutar en paralelo
-    const results = await Promise.all(includes.map(i => fetchAndInsert(i.url, i.id)));
-    document.dispatchEvent(new CustomEvent('includes:loaded', { detail: { results } }));
-    return results;
-}
+    includes.forEach(i => fetchAndInsert(i.url, i.id));
+};
 
-document.addEventListener("DOMContentLoaded", async () => {
+document.addEventListener("DOMContentLoaded", () => {
     console.log("Página lista ✅");
 
-    // Asegurar que los includes se han cargado antes de inicializar lógica que depende del header
-    await includeFragments();
-
-    // Inicializar carrito si estamos en shop.html
-    if (window.location.pathname.includes('shop.html')) {
-        initShop();
-        loadCart();
-    }
-
-    // Inicializar checkout si estamos en checkout.html
-    if (window.location.pathname.includes('checkout.html')) {
-        initCheckout();
-    }
-
-    // Inicializar roster si estamos en roster.html
-    if (window.location.pathname.includes('roster.html')) {
-        initRoster();
-    }
-
-    // Inicializar calendario si estamos en calendario.html
-    if (window.location.pathname.includes('calendario.html')) {
-        initCalendario();
-    }
+    // Cargar includes con callbacks (no usamos CustomEvent ni Promises)
+    includeFragments(() => {
+        // Inicializar páginas según la ruta
+        if (window.location.pathname.includes('shop.html')) {
+            initShop();
+            loadCart();
+        }
+        if (window.location.pathname.includes('checkout.html')) {
+            initCheckout();
+        }
+        if (window.location.pathname.includes('roster.html')) {
+            initRoster();
+        }
+        if (window.location.pathname.includes('calendario.html')) {
+            initCalendario();
+        }
+    });
 });
 
 // ===== MENU MOBILE =====
-function toggleMenu() {
+/**
+ * Alterna el menú mobile (clase .active en nav y botón).
+ * Usado desde el HTML con `onclick="toggleMenu()"`.
+ * @method toggleMenu
+ * @returns {void}
+ */
+const toggleMenu = () => {
     const nav = document.querySelector('.primary-nav');
     const toggle = document.getElementById('menuToggle');
 
@@ -63,7 +71,8 @@ function toggleMenu() {
         nav.classList.toggle('active');
         toggle.classList.toggle('active');
     }
-}
+};
+window.toggleMenu = toggleMenu;
 
 // Cerrar menú al hacer click en un link
 document.addEventListener('click', (e) => {
@@ -92,12 +101,18 @@ window.addEventListener('resize', () => {
 });
 
 // ===== ROSTER =====
-function initRoster() {
+/**
+ * Inicializa filtros y comportamiento de la página Roster.
+ * Añade listener al select de posición si existe.
+ * @method initRoster
+ * @returns {void}
+ */
+const initRoster = () => {
     // Filtro de cards por posición
     const posFilter = document.getElementById("pos");
     if (posFilter) {
-        posFilter.addEventListener("change", function () {
-            const pos = this.value;
+        posFilter.addEventListener("change", (e) => {
+            const pos = e.target.value;
             document.querySelectorAll(".player-card").forEach((card) => {
                 if (!pos || card.dataset.pos === pos) {
                     card.style.display = "";
@@ -107,10 +122,15 @@ function initRoster() {
             });
         });
     }
-}
+};
 
 // ===== CALENDARIO =====
-function initCalendario() {
+/**
+ * Inicializa el conteo y filtros de la página Calendario.
+ * @method initCalendario
+ * @returns {void}
+ */
+const initCalendario = () => {
     const total = document.querySelectorAll(".game-card").length;
     const countEl = document.getElementById("calCount");
     const emptyEl = document.getElementById("calEmpty");
@@ -122,8 +142,8 @@ function initCalendario() {
     // Filtrado por mes (funcionalidad adicional)
     const mesFilter = document.getElementById("mes");
     if (mesFilter) {
-        mesFilter.addEventListener("change", function () {
-            const mes = this.value;
+        mesFilter.addEventListener("change", (e) => {
+            const mes = e.target.value;
             let count = 0;
             document.querySelectorAll(".game-card").forEach((card) => {
                 if (!mes || card.getAttribute("data-month") === mes) {
@@ -138,7 +158,7 @@ function initCalendario() {
 
         });
     }
-}
+};
 
 // Scroll suave
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -156,8 +176,12 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 let cart = [];
 let cartOpen = false; // Asegurar que esté cerrado por defecto
 
-// Cargar carrito desde localStorage al inicializar
-function loadCart() {
+/**
+ * Carga el carrito desde localStorage (clave 'bullsCart') y actualiza la UI.
+ * @method loadCart
+ * @returns {void}
+ */
+const loadCart = () => {
     const savedCart = localStorage.getItem('bullsCart');
     cart = savedCart ? JSON.parse(savedCart) : [];
     // Always update the cart display so UI (counter/icon) reflects current state
@@ -171,14 +195,25 @@ function loadCart() {
         cartOpen = false;
         document.body.style.overflow = '';
     }
-}
+};
 
-// Guardar carrito en localStorage
-function saveCart() {
+/**
+ * Guarda el carrito en localStorage (clave 'bullsCart').
+ * @method saveCart
+ * @returns {void}
+ */
+const saveCart = () => {
     localStorage.setItem('bullsCart', JSON.stringify(cart));
-}
+};
 
-function addToCart(name, price) {
+/**
+ * Añade un producto al carrito o incrementa la cantidad si ya existe.
+ * @method addToCart
+ * @param {string} name Nombre del producto
+ * @param {number} price Precio en unidades enteras (p.ej. 29999)
+ * @returns {void}
+ */
+const addToCart = (name, price) => {
     const existing = cart.find(item => item.name === name);
     if (existing) {
         existing.quantity += 1;
@@ -188,16 +223,37 @@ function addToCart(name, price) {
     saveCart();
     updateCartDisplay();
     // Eliminar la apertura automática del carrito
-}
+};
+window.addToCart = addToCart;
 
-function removeFromCart(name) {
+// Exponer funciones usadas por handlers inline en HTML
+window.removeFromCart = removeFromCart;
+window.changeQuantity = changeQuantity;
+window.clearCart = clearCart;
+window.updateCartDisplay = updateCartDisplay;
+
+/**
+ * Elimina un producto del carrito por nombre.
+ * @method removeFromCart
+ * @param {string} name Nombre del producto a eliminar
+ * @returns {void}
+ */
+const removeFromCart = (name) => {
     cart = cart.filter(item => item.name !== name);
     saveCart();
     updateCartDisplay();
     // Eliminar el cierre automático del carrito
-}
+};
 
-function changeQuantity(name, change) {
+/**
+ * Cambia la cantidad de un producto en el carrito.
+ * Si la cantidad llega a 0, elimina el producto.
+ * @method changeQuantity
+ * @param {string} name Nombre del producto
+ * @param {number} change Incremento (+1) o decremento (-1)
+ * @returns {void}
+ */
+const changeQuantity = (name, change) => {
     const item = cart.find(item => item.name === name);
     if (item) {
         item.quantity += change;
@@ -208,69 +264,93 @@ function changeQuantity(name, change) {
             updateCartDisplay();
         }
     }
-}
+};
 
-function clearCart() {
+/**
+ * Vacía el carrito y elimina la entrada de localStorage.
+ * @method clearCart
+ * @returns {void}
+ */
+const clearCart = () => {
     cart = [];
     localStorage.removeItem('bullsCart');
     updateCartDisplay();
-    // Eliminar el cierre automático del carrito
-}
+    // Eliminar el cierre automática del carrito
+};
 
-function updateCartDisplay() {
-    const cartCount = document.getElementById('cartCount');
-    const cartCounter = document.getElementById('cartCounter');
-    const cartItems = document.getElementById('cartItems');
-    const cartTotal = document.getElementById('cartTotal');
+/**
+ * Actualiza la interfaz del carrito: contador, lista de items y total.
+ * Genera HTML para `#cartItems` usando handlers inline seguros.
+ * @method updateCartDisplay
+ * @returns {void}
+ */
+const updateCartDisplay = () => {
+        const cartCount = document.getElementById('cartCount');
+        const cartCounter = document.getElementById('cartCounter');
+        const cartItems = document.getElementById('cartItems');
+        const cartTotal = document.getElementById('cartTotal');
 
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-    const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+        const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
 
-    if (cartCount) cartCount.textContent = totalItems;
+        if (cartCount) cartCount.textContent = totalItems;
 
-    // Mostrar contador si estamos en shop.html o si hay items en otras páginas
-    if (cartCounter) {
-        const isShopPage = window.location.pathname.includes('shop.html');
-        cartCounter.style.display = (isShopPage || totalItems > 0) ? 'block' : 'none';
-    }
-
-    if (cartTotal) cartTotal.textContent = totalPrice.toLocaleString();
-
-    if (cartItems) {
-        if (cart.length === 0) {
-            cartItems.innerHTML = '<p class="cart-empty">Tu carrito está vacío</p>';
-        } else {
-            cartItems.innerHTML = cart.map(item => `
-        <div class="cart-item">
-          <div class="item-left">
-            <span class="item-name">${item.name}</span>
-            <span class="item-price">$${item.price.toLocaleString()}</span>
-          </div>
-          <div class="item-right">
-            <div class="quantity-controls">
-              <button onclick="changeQuantity('${item.name}', -1)" class="qty-btn">-</button>
-              <span class="quantity">${item.quantity}</span>
-              <button onclick="changeQuantity('${item.name}', 1)" class="qty-btn">+</button>
-            </div>
-            <button onclick="removeFromCart('${item.name}')" class="remove-btn">×</button>
-          </div>
-        </div>
-      `).join('');
+        // Mostrar contador si estamos en shop.html o si hay items en otras páginas
+        if (cartCounter) {
+                const isShopPage = window.location.pathname.includes('shop.html');
+                cartCounter.style.display = (isShopPage || totalItems > 0) ? 'block' : 'none';
         }
-    }
-}
 
-function showCartSection() {
-    toggleCart();
-}
+        if (cartTotal) cartTotal.textContent = totalPrice.toLocaleString();
 
-function hideCartSection() {
+            if (cartItems) {
+                    if (cart.length === 0) {
+                            cartItems.innerHTML = '<p class="cart-empty">Tu carrito está vacío</p>';
+                    } else {
+                            cartItems.innerHTML = cart.map(item => `
+                    <div class="cart-item">
+                        <div class="item-left">
+                            <span class="item-name">${item.name}</span>
+                            <span class="item-price">$${item.price.toLocaleString()}</span>
+                        </div>
+                        <div class="item-right">
+                            <div class="quantity-controls">
+                                <button onclick="changeQuantity('${item.name}', -1)" class="qty-btn">-</button>
+                                <span class="quantity">${item.quantity}</span>
+                                <button onclick="changeQuantity('${item.name}', 1)" class="qty-btn">+</button>
+                            </div>
+                            <button onclick="removeFromCart('${item.name}')" class="remove-btn">×</button>
+                        </div>
+                    </div>
+                `).join('');
+                    }
+            }
+};
+
+/**
+ * Muestra la sección del carrito (proxy a toggleCart).
+ * @method showCartSection
+ * @returns {void}
+ */
+const showCartSection = () => toggleCart();
+
+/**
+ * Oculta la sección del carrito si está abierta.
+ * @method hideCartSection
+ * @returns {void}
+ */
+const hideCartSection = () => {
     if (cartOpen) {
         toggleCart();
     }
-}
+};
 
-function toggleCart() {
+/**
+ * Alterna el estado abierto/cerrado del sidebar del carrito y overlay.
+ * @method toggleCart
+ * @returns {void}
+ */
+const toggleCart = () => {
     const sidebar = document.getElementById('cartSidebar');
     const overlay = document.getElementById('cartOverlay');
 
@@ -291,10 +371,16 @@ function toggleCart() {
         overlay.classList.remove('open');
         document.body.style.overflow = '';
     }
-}
+};
+window.toggleCart = toggleCart;
 
 // Función específica para cerrar el carrito
-function closeCart() {
+/**
+ * Cierra el carrito y restaura el scroll del body.
+ * @method closeCart
+ * @returns {void}
+ */
+const closeCart = () => {
     const sidebar = document.getElementById('cartSidebar');
     const overlay = document.getElementById('cartOverlay');
 
@@ -305,9 +391,15 @@ function closeCart() {
         document.body.style.overflow = '';
         console.log('Cart closed');
     }
-}
+};
+window.closeCart = closeCart;
 
-function checkout() {
+/**
+ * Inicia el proceso de checkout: valida que haya items y redirige a checkout.html
+ * @method checkout
+ * @returns {void}
+ */
+const checkout = () => {
     if (cart.length === 0) {
         alert('El carrito está vacío');
         return;
@@ -315,10 +407,16 @@ function checkout() {
     // Guardar carrito y redirigir a checkout
     saveCart();
     window.location.href = 'checkout.html';
-}
+};
+window.checkout = checkout;
 
 // ===== SHOP FILTERS =====
-function initShop() {
+/**
+ * Inicializa filtros, búsqueda y ordenamiento en la página Shop.
+ * @method initShop
+ * @returns {void}
+ */
+const initShop = () => {
     // Mostrar ícono del carrito en el header cuando estamos en shop
     // pero NO abrir el sidebar automáticamente
     const cartCounter = document.getElementById('cartCounter');
@@ -337,23 +435,36 @@ function initShop() {
 
     const cards = Array.from(grid.querySelectorAll(".prod-card"));
 
+    /**
+     * Normaliza texto para búsqueda: minúsculas, sin tildes y trim.
+     * @method norm
+     * @param {string} s Texto a normalizar
+     * @returns {string} Texto normalizado
+     */
     const norm = (s) =>
         (s || "")
             .toLowerCase()
             .normalize("NFD")
-            .replace(/[\u0300-\u036f]/g, "")
+            .replace(/[ -\u036f]/g, "")
             .trim();
 
-    function matchPrecio(p, bucket) {
+    /**
+     * Comprueba si un precio pertenece al bucket seleccionado.
+     * @method matchPrecio
+     * @param {string|number} p Precio (string o number)
+     * @param {string} bucket Identificador del bucket ('1','2','3' o '')
+     * @returns {boolean} true si el precio entra en el bucket
+     */
+    const matchPrecio = (p, bucket) => {
         if (!bucket) return true;
         const n = Number(p);
         if (bucket === "1") return n <= 20000;
         if (bucket === "2") return n > 20000 && n <= 40000;
         if (bucket === "3") return n > 40000;
         return true;
-    }
+    };
 
-    function aplicar() {
+    const aplicar = () => {
         const term = norm(q.value);
         const c = cat.value;
         const t = talle.value;
@@ -375,9 +486,9 @@ function initShop() {
         });
 
         ordenar();
-    }
+    };
 
-    function ordenar() {
+    const ordenar = () => {
         const val = orden.value;
         const visibles = cards.filter((c) => c.style.display !== "none");
         if (!val) return; // sin orden → queda natural
@@ -398,7 +509,7 @@ function initShop() {
 
         // Reinsertar en el DOM solo los visibles (los ocultos quedan donde están)
         visibles.forEach((el) => grid.appendChild(el));
-    }
+    };
 
     [q, cat, talle, precio].forEach((el) =>
         el.addEventListener("input", aplicar)
@@ -406,10 +517,16 @@ function initShop() {
     orden.addEventListener("change", ordenar);
 
     aplicar(); // init
-}
+};
 
 // ===== CHECKOUT =====
-function initCheckout() {
+/**
+ * Inicializa la página de checkout: muestra items desde localStorage
+ * y configura el envío del formulario.
+ * @method initCheckout
+ * @returns {void}
+ */
+const initCheckout = () => {
     const cartData = localStorage.getItem('bullsCart');
     const cart = cartData ? JSON.parse(cartData) : [];
 
@@ -455,7 +572,8 @@ function initCheckout() {
 
     cardNumberInput.addEventListener('input', (e) => {
         let value = e.target.value.replace(/\s/g, '').replace(/[^0-9]/gi, '');
-        e.target.value = value.match(/.{1,4}/g)?.join(' ') || value;
+        const m = value.match(/.{1,4}/g);
+        e.target.value = m ? m.join(' ') : value;
     });
 
     // Formatear fecha de vencimiento
@@ -467,11 +585,11 @@ function initCheckout() {
         }
         e.target.value = value;
     });
-}
+};
 
 
 // ===== Filtro de calendario (por mes y texto) =====
-(function () {
+(() => {
     const list = document.getElementById("partidos");
     if (!list) return; // solo corre en calendario.html
 
@@ -482,15 +600,14 @@ function initCheckout() {
 
     const items = Array.from(list.querySelectorAll(".game-card"));
 
-    function normalizar(str) {
-        return (str || "").toLowerCase()
+    const normalizar = (str) =>
+        (str || "").toLowerCase()
             .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // quitar tildes
             .replace(/\s+/g, " ").trim();
-    }
 
-    function aplicarFiltro() {
-        const mes = selMes?.value || "";               // "" o "10".."12","1".."4"
-        const term = normalizar(q?.value || "");
+    const aplicarFiltro = () => {
+        const mes = (selMes && selMes.value) || "";               // "" o "10".."12","1".."4"
+        const term = normalizar((q && q.value) || "");
 
         let visibles = 0;
         items.forEach(li => {
@@ -505,10 +622,10 @@ function initCheckout() {
 
         if (count) count.textContent = String(visibles);
         if (empty) empty.hidden = visibles > 0;
-    }
+    };
 
-    selMes?.addEventListener("change", aplicarFiltro);
-    q?.addEventListener("input", aplicarFiltro);
+    if (selMes) selMes.addEventListener("change", aplicarFiltro);
+    if (q) q.addEventListener("input", aplicarFiltro);
 
     // init
     aplicarFiltro();
