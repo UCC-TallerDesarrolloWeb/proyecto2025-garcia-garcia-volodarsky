@@ -1,0 +1,181 @@
+/* Historia page styles copied from original styles */
+/* Historia (copiado del css original) */
+.historia .page-header {
+    margin-bottom: 16px;
+}
+
+.historia .lead {
+    color: #d0d0d0;
+}
+
+/* Timeline */
+.timeline {
+    margin-top: 10px;
+}
+
+.timeline h2 {
+    margin-bottom: 12px;
+}
+
+.t-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 14px;
+    background: #1b1b1b;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 12px;
+}
+
+.t-year {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #191919;
+    border: 1px solid #262626;
+    border-radius: 10px;
+}
+
+.t-card h3 {
+    margin-bottom: 6px;
+}
+
+.t-card p {
+    color: #d2d2d2;
+}
+
+/* Figuras */
+.figuras {
+    margin-top: 24px;
+}
+
+.figuras-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.fig-card {
+    background: #1b1b1b;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.fig-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    object-position: center center;
+    display: block;
+    background: #222;
+    border-radius: 50%;
+    margin: 18px auto 10px auto;
+}
+
+.fig-card figcaption {
+    padding: 12px;
+}
+
+.fig-card h3 {
+    margin-bottom: 6px;
+    color: #ce1141;
+    font-weight: 700;
+}
+
+.fig-card p {
+    color: #d2d2d2;
+}
+
+/* Trophies */
+.trophies {
+    margin-top: 24px;
+}
+
+.trophies-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 12px 0;
+}
+
+.trophy {
+    background: #1b1b1b;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.t-num {
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.t-label {
+    color: #d0d0d0;
+}
+
+
+/* Quote */
+.quote {
+    margin-top: 24px;
+    background: linear-gradient(135deg, #1b1b1b, #24161a);
+    border: 1px solid #262626;
+    border-radius: 16px;
+    padding: 18px;
+}
+
+.quote blockquote {
+    margin: 0;
+}
+
+.quote p {
+    font-size: 1.1rem;
+}
+
+.quote footer {
+    color: #cfcfcf;
+    margin-top: 6px;
+}
+
+/* FAQ (sin JS) */
+.faq {
+    margin-top: 24px;
+}
+
+.faq-item {
+    background: #1b1b1b;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+
+.faq-item summary {
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.faq-item p {
+    margin-top: 8px;
+    color: #d2d2d2;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .figuras-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+    .t-item { grid-template-columns: 1fr; }
+    .figuras-grid { grid-template-columns: 1fr; }
+    .trophies-list { grid-template-columns: 1fr; }
+}

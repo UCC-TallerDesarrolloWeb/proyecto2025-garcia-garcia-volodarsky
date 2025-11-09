@@ -226,12 +226,6 @@ const addToCart = (name, price) => {
 };
 window.addToCart = addToCart;
 
-// Exponer funciones usadas por handlers inline en HTML
-window.removeFromCart = removeFromCart;
-window.changeQuantity = changeQuantity;
-window.clearCart = clearCart;
-window.updateCartDisplay = updateCartDisplay;
-
 /**
  * Elimina un producto del carrito por nombre.
  * @method removeFromCart
@@ -326,6 +320,13 @@ const updateCartDisplay = () => {
                     }
             }
 };
+
+// Exponer funciones usadas por handlers inline en HTML
+window.removeFromCart = removeFromCart;
+window.changeQuantity = changeQuantity;
+window.clearCart = clearCart;
+window.updateCartDisplay = updateCartDisplay;
+
 
 /**
  * Muestra la sección del carrito (proxy a toggleCart).

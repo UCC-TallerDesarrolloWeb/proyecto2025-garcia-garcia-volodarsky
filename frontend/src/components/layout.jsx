@@ -1,15 +1,19 @@
 import Footer from "./footer";
 import Header from "./header"
+import CartSidebar from "./CartSidebar"
+import Sponsors from "./Sponsors"
 import { Outlet } from "react-router-dom"
 
 const Layout = () => {
   return (
     <>
-    <Header />
-    <main>
+      <Header />
+      <main className="container">
         <Outlet />
-    </main>
-    <Footer />
+        <Sponsors />
+      </main>
+      <Footer />
+      <CartSidebar />
     </>
   );
 };

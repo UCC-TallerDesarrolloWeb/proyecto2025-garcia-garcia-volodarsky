@@ -1,0 +1,114 @@
+/* NOSOTROS */
+.nosotros .n-head {
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+.nosotros .lead {
+    max-width: 900px; /* ancho controlado */
+    margin: 8px auto 0; /* centrado dentro del contenedor */
+    color: #d0d0d0;
+    text-align: left; /* alineación izquierda */
+    padding: 0 12px; /* mismo espacio en izq/der */
+}
+
+/* Paneles suaves */
+.nosotros .panel {
+    background: #151515;
+    border: 1px solid #262626;
+    border-radius: 16px;
+    padding: 18px 24px; /* padding simétrico izquierda/derecha */
+    margin: 20px auto;
+    max-width: 1000px; /* ancho máximo consistente */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Títulos con subrayado acento */
+.nosotros .section-title {
+    text-align: center; /* títulos centrados */
+    position: relative;
+    margin-bottom: 14px;
+}
+
+/* Párrafos más legibles */
+.nosotros .text,
+.nosotros p {
+    color: #d6d6d6;
+    max-width: 900px;
+    margin: 0 auto 16px;
+    text-align: left; /* todos los textos alineados izq */
+    padding: 0 12px; /* simetría en márgenes laterales */
+}
+
+/* Imagen destacada */
+.nosotros .hero-figure {
+    margin: 16px auto 0;
+    max-width: 560px;
+}
+
+.nosotros .hero-figure img {
+    width: 100%;
+    height: auto;
+    border-radius: 14px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.35s ease;
+}
+
+.nosotros .hero-figure img:hover {
+    transform: scale(1.015);
+}
+
+.nosotros .hero-figure figcaption {
+    color: #bdbdbd;
+    font-size: 0.95rem;
+    margin-top: 6px;
+    text-align: left; /* caption alineado izq */
+    padding: 0 12px;
+}
+
+/* Galería 3 columnas */
+.nosotros .gallery-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+}
+
+.nosotros .foto-card {
+    background: #1a1a1a;
+    border: 1px solid #2b2b2b;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.nosotros .foto-card:hover {
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
+}
+
+.nosotros .foto-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.nosotros .foto-card figcaption {
+    padding: 10px 12px;
+    color: #d2d2d2;
+    font-size: 0.95rem;
+    text-align: left; /* captions alineados izq */
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+    .nosotros .gallery-3 { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 640px) {
+    .nosotros .panel { padding: 14px; }
+    .nosotros .gallery-3 { grid-template-columns: 1fr; }
+    .nosotros .hero-figure { max-width: 100%; }
+}

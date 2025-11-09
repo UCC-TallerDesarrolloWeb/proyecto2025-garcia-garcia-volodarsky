@@ -1,26 +1,568 @@
 {
   "productos": [
     {
-      "id": 1,
-      "name": "Producto A",
-      "description": "Descripción del Producto A",
-      "price": 100.0,
-      "stock": 50
+      "id": "1",
+      "name": "Camiseta Home 24/25",
+      "description": "Modelo local rojo. Talles: S–XL.",
+      "category": "camiseta",
+      "price": 29999,
+      "image": "camisetalocal.jpg",
+      "size": "S,M,L,XL",
+      "stock": 12
     },
     {
-      "id": 2,
-      "name": "Producto B",
-      "description": "Descripción del Producto B",
-      "price": 150.0,
+      "id": "2",
+      "name": "Camiseta Away 24/25",
+      "description": "Modelo visitante blanco. Talles: S–XL.",
+      "category": "camiseta",
+      "price": 31999,
+      "image": "camisetavisita.jpg",
+      "size": "S,M,L,XL",
+      "stock": 8
+    },
+    {
+      "id": "3",
+      "name": "Gorra Classic",
+      "description": "Snapback ajustable.",
+      "category": "gorra",
+      "price": 19999,
+      "image": "gorra.avif",
+      "size": "U",
+      "stock": 25
+    },
+    {
+      "id": "4",
+      "name": "Buzo Retro",
+      "description": "Con capucha, estilo 90s. Talles: M–XL.",
+      "category": "buzo",
+      "price": 44999,
+      "image": "campera.jpg",
+      "size": "M,L,XL",
+      "stock": 6
+    },
+    {
+      "id": "5",
+      "name": "Short Classic",
+      "description": "Entrenamiento liviano. Talles: S–XL.",
+      "category": "short",
+      "price": 25999,
+      "image": "short.avif",
+      "size": "S,M,L,XL",
+      "stock": 10
+    },
+    {
+      "id": "6",
+      "name": "Medias Team",
+      "description": "Pack x2. Talles: S–L.",
+      "category": "media",
+      "price": 9999,
+      "image": "medias.jpg",
+      "size": "S,M,L",
       "stock": 30
     },
     {
-      "id": 3,
-      "name": "Producto C",
-      "description": "Descripción del Producto C",
-      "price": 200.0,
-      "stock": 20
+      "id": "7",
+      "name": "Short 24/25",
+      "description": "Modelo blanco Statement Edition. Talles: S–XL.",
+      "category": "short",
+      "price": 25999,
+      "image": "short2.webp",
+      "size": "S,M,L,XL",
+      "stock": 7
+    },
+    {
+      "id": "8",
+      "name": "Pelota Oficial Spalding",
+      "description": "Pelota de básquet oficial Chicago Bulls. Talle 7.",
+      "category": "pelota",
+      "price": 21999,
+      "image": "pelota2.webp",
+      "size": "U",
+      "stock": 5
+    },
+    {
+      "id": "9",
+      "name": "Pelota Edición Especial",
+      "description": "Edición Jordan con logo Chicago Bulls. Talle 7.",
+      "category": "pelota",
+      "price": 24999,
+      "image": "pelota.webp",
+      "size": "U",
+      "stock": 3
     }
   ],
-  "cart": []
+  "players": [
+    {
+      "id": "1",
+      "name": "Isaac Okoro",
+      "position": "Base",
+      "img": "okoro.png",
+      "height": "1.96 m",
+      "weight": "102 kg",
+      "age": 23,
+      "nationality": "USA"
+    },
+    {
+      "id": "2",
+      "name": "Josh Giddey",
+      "position": "Base",
+      "img": "GIDDEY.jpg",
+      "height": "2.03 m",
+      "weight": "93 kg",
+      "age": 22,
+      "nationality": "AUS"
+    },
+    {
+      "id": "3",
+      "name": "Matas Buzelis",
+      "position": "Escolta",
+      "img": "buzelis.png",
+      "height": "2.08 m",
+      "weight": "95 kg",
+      "age": 20,
+      "nationality": "LTU"
+    },
+    {
+      "id": "4",
+      "name": "Thaddeus Young",
+      "position": "Alero",
+      "img": "young.png",
+      "height": "2.03 m",
+      "weight": "104 kg",
+      "age": 37,
+      "nationality": "USA"
+    },
+    {
+      "id": "5",
+      "name": "Patrick Williams",
+      "position": "Alero",
+      "img": "willians.png",
+      "height": "2.01 m",
+      "weight": "104 kg",
+      "age": 23,
+      "nationality": "USA"
+    },
+    {
+      "id": "6",
+      "name": "Wendell Carter Jr.",
+      "position": "Ala-Pívot",
+      "img": "carter.png",
+      "height": "2.08 m",
+      "weight": "122 kg",
+      "age": 25,
+      "nationality": "USA"
+    },
+    {
+      "id": "7",
+      "name": "Jalen Smith",
+      "position": "Pívot",
+      "img": "jalen smith.png",
+      "height": "2.08 m",
+      "weight": "104 kg",
+      "age": 24,
+      "nationality": "USA"
+    },
+    {
+      "id": "8",
+      "name": "Ayo Dosunmu",
+      "position": "Base",
+      "img": "dosunmu.png",
+      "height": "1.96 m",
+      "weight": "91 kg",
+      "age": 24,
+      "nationality": "USA"
+    },
+    {
+      "id": "9",
+      "name": "Tre Jones",
+      "position": "Base",
+      "img": "tre jones.png",
+      "height": "1.85 m",
+      "weight": "84 kg",
+      "age": 25,
+      "nationality": "USA"
+    },
+    {
+      "id": "10",
+      "name": "Coby White",
+      "position": "Escolta",
+      "img": "white.png",
+      "height": "1.96 m",
+      "weight": "88 kg",
+      "age": 24,
+      "nationality": "USA"
+    },
+    {
+      "id": "11",
+      "name": "Dalen Terry",
+      "position": "Escolta",
+      "img": "terry.png",
+      "height": "2.01 m",
+      "weight": "88 kg",
+      "age": 22,
+      "nationality": "USA"
+    },
+    {
+      "id": "12",
+      "name": "Kevin Huerter",
+      "position": "Alero",
+      "img": "huerter.png",
+      "height": "2.01 m",
+      "weight": "86 kg",
+      "age": 26,
+      "nationality": "USA"
+    },
+    {
+      "id": "13",
+      "name": "John Collins",
+      "position": "Alero",
+      "img": "collins.png",
+      "height": "2.06 m",
+      "weight": "107 kg",
+      "age": 27,
+      "nationality": "USA"
+    },
+    {
+      "id": "14",
+      "name": "Brandon Miller",
+      "position": "Ala-Pívot",
+      "img": "miller.png",
+      "height": "2.06 m",
+      "weight": "91 kg",
+      "age": 22,
+      "nationality": "USA"
+    },
+    {
+      "id": "15",
+      "name": "E.J. Liddell",
+      "position": "Ala-Pívot",
+      "img": "liddel.png",
+      "height": "2.01 m",
+      "weight": "109 kg",
+      "age": 23,
+      "nationality": "USA"
+    },
+    {
+      "id": "16",
+      "name": "Nikola Vucevic",
+      "position": "Pívot",
+      "img": "vucevic.png",
+      "height": "2.13 m",
+      "weight": "120 kg",
+      "age": 34,
+      "nationality": "MNE"
+    },
+    {
+      "id": "17",
+      "name": "Adama Sanogo",
+      "position": "Pívot",
+      "img": "sanogo.png",
+      "height": "2.06 m",
+      "weight": "111 kg",
+      "age": 22,
+      "nationality": "MLI"
+    },
+    {
+      "id": "18",
+      "name": "Armel Essengue",
+      "position": "Pívot",
+      "img": "essengue.png",
+      "height": "2.05 m",
+      "weight": "115 kg",
+      "age": 41,
+      "nationality": "CMR"
+    },
+    {
+      "id": "19",
+      "name": "Billy Donovan",
+      "position": "Entrenador",
+      "img": "coach.png",
+      "height": "1.80 m",
+      "weight": "78 kg",
+      "age": 60,
+      "nationality": "USA"
+    }
+  ],
+  "games": [
+    {
+      "id": "2025-10-12-lal",
+      "date": "2025-10-12",
+      "time": "21:00",
+      "opponent": "Los Angeles Lakers",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2025-10-18-bos",
+      "date": "2025-10-18",
+      "time": "20:30",
+      "opponent": "Boston Celtics",
+      "venue": "TD Garden · Boston",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2025-10-25-mil",
+      "date": "2025-10-25",
+      "time": "20:00",
+      "opponent": "Milwaukee Bucks",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2025-10-29-tor",
+      "date": "2025-10-29",
+      "time": "19:30",
+      "opponent": "Toronto Raptors",
+      "venue": "Scotiabank Arena · Toronto",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2025-11-02-nop",
+      "date": "2025-11-02",
+      "time": "21:00",
+      "opponent": "New Orleans Pelicans",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2025-11-08-atl",
+      "date": "2025-11-08",
+      "time": "20:00",
+      "opponent": "Atlanta Hawks",
+      "venue": "State Farm Arena · Atlanta",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2025-12-05-sac",
+      "date": "2025-12-05",
+      "time": "21:00",
+      "opponent": "Sacramento Kings",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2025-12-15-orl",
+      "date": "2025-12-15",
+      "time": "20:00",
+      "opponent": "Orlando Magic",
+      "venue": "Amway Center · Orlando",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-01-10-min",
+      "date": "2026-01-10",
+      "time": "21:00",
+      "opponent": "Minnesota Timberwolves",
+      "venue": "Target Center · Minneapolis",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-01-22-cha",
+      "date": "2026-01-22",
+      "time": "20:00",
+      "opponent": "Charlotte Hornets",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2026-02-09-bos",
+      "date": "2026-02-09",
+      "time": "20:30",
+      "opponent": "Boston Celtics",
+      "venue": "TD Garden · Boston",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-02-22-ind",
+      "date": "2026-02-22",
+      "time": "19:00",
+      "opponent": "Indiana Pacers",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2026-03-10-gsw",
+      "date": "2026-03-10",
+      "time": "22:00",
+      "opponent": "Golden State Warriors",
+      "venue": "Chase Center · San Francisco",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-03-25-mem",
+      "date": "2026-03-25",
+      "time": "20:00",
+      "opponent": "Memphis Grizzlies",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2026-04-02-hou",
+      "date": "2026-04-02",
+      "time": "21:00",
+      "opponent": "Houston Rockets",
+      "venue": "Toyota Center · Houston",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-04-18-okc",
+      "date": "2026-04-18",
+      "time": "20:00",
+      "opponent": "Oklahoma City Thunder",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2025-11-05-mia",
+      "date": "2025-11-05",
+      "time": "21:30",
+      "opponent": "Miami Heat",
+      "venue": "Kaseya Center · Miami",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2025-11-12-gsw",
+      "date": "2025-11-12",
+      "time": "19:30",
+      "opponent": "Golden State Warriors",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2025-11-20-phi",
+      "date": "2025-11-20",
+      "time": "20:00",
+      "opponent": "Philadelphia 76ers",
+      "venue": "Wells Fargo Center · Philadelphia",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2025-12-02-bkn",
+      "date": "2025-12-02",
+      "time": "21:00",
+      "opponent": "Brooklyn Nets",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2025-12-10-dal",
+      "date": "2025-12-10",
+      "time": "20:30",
+      "opponent": "Dallas Mavericks",
+      "venue": "American Airlines Center · Dallas",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2025-12-22-nyk",
+      "date": "2025-12-22",
+      "time": "20:00",
+      "opponent": "New York Knicks",
+      "venue": "Madison Square Garden · New York",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-01-05-den",
+      "date": "2026-01-05",
+      "time": "21:00",
+      "opponent": "Denver Nuggets",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2026-01-15-sas",
+      "date": "2026-01-15",
+      "time": "20:00",
+      "opponent": "San Antonio Spurs",
+      "venue": "Frost Bank Center · San Antonio",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-02-03-tor",
+      "date": "2026-02-03",
+      "time": "21:00",
+      "opponent": "Toronto Raptors",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2026-02-14-nop",
+      "date": "2026-02-14",
+      "time": "20:30",
+      "opponent": "New Orleans Pelicans",
+      "venue": "Smoothie King Center · New Orleans",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-03-01-phx",
+      "date": "2026-03-01",
+      "time": "21:00",
+      "opponent": "Phoenix Suns",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2026-03-18-uta",
+      "date": "2026-03-18",
+      "time": "22:00",
+      "opponent": "Utah Jazz",
+      "venue": "Delta Center · Salt Lake City",
+      "homeAway": "away",
+      "result": null
+    },
+    {
+      "id": "2026-04-07-cle",
+      "date": "2026-04-07",
+      "time": "20:00",
+      "opponent": "Cleveland Cavaliers",
+      "venue": "United Center · Chicago",
+      "homeAway": "home",
+      "result": null
+    },
+    {
+      "id": "2026-04-14-det",
+      "date": "2026-04-14",
+      "time": "19:00",
+      "opponent": "Detroit Pistons",
+      "venue": "Little Caesars Arena · Detroit",
+      "homeAway": "away",
+      "result": null
+    }
+  ],
+  "cart": [
+    {
+      "id": "d479",
+      "productId": "1",
+      "name": "Camiseta Home 24/25",
+      "price": 29999,
+      "qty": 4,
+      "image": "camisetalocal.jpg"
+    }
+  ]
 }

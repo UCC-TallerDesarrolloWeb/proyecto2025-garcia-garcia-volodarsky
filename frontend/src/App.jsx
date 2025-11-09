@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// use Bulls logo from public instead of vite.svg
+const viteLogo = '/logo-bulls.png'
 import './App.css'
 
 function App() {

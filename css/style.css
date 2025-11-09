@@ -50,14 +50,6 @@
     background: #f3f3f3;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
 }
-
-.player-card .card-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    text-align: center;
-}
-
 .player-card .card-info {
     list-style: none;
     padding: 0;
@@ -318,8 +310,6 @@ h1 {
 #successModal.open { display:flex; }
 #successModal .box { background:#fff; padding:1.5rem; border-radius:8px; box-shadow:0 8px 30px rgba(0,0,0,.2); }
 
-/* NOTA: evita atributos style="..." en HTML. Si falta algún ID en el HTML,
-    añádelo en el fragment (`header.html`, `shop.html`) correspondiente. */
     font-size: 1.1rem;
 }
 
