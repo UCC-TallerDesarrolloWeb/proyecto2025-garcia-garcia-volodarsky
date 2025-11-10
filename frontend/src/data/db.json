@@ -555,5 +555,14 @@
       "result": null
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "66d5",
+      "productId": "5",
+      "name": "Short Classic",
+      "price": 25999,
+      "qty": 3,
+      "image": "short.avif"
+    }
+  ]
 }
