@@ -47,7 +47,7 @@ export async function removeFromCart(cartItemId) {
   return true;
 }
 
-//UPDATE
+//PUT
 export async function updateQty(cartItemId, qty) {
   const res = await fetch(`${BASE_URL}/${cartItemId}`, {
     method: "PATCH",

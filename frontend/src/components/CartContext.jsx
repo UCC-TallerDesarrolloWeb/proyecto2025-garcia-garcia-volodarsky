@@ -1,11 +1,13 @@
-import { useEffect, useState } from 'react'
-import * as cartApi from '../api/cartApi'
+import { createContext, useContext, useEffect, useState } from 'react'
+import * as cartApi from '@api/cartApi'
 
-// Custom hook providing cart state and actions without using useContext
-// This intentionally avoids useContext so consumers only rely on useState/useEffect
-export function useCart() {
+// Proveedor del carrito (estado central)
+const CartContext = createContext(null)
+
+export function CartProvider({ children }) {
   const [cart, setCart] = useState([])
   const [cartOpen, setCartOpen] = useState(false)
+  const STORAGE_KEY = 'bulls_cart'
 
   const refreshCart = async () => {
     try {
@@ -19,23 +21,59 @@ export function useCart() {
         quantity: it.qty || it.quantity || 1,
       }))
       setCart(mapped)
-    } catch (e) {
-      console.error('Error cargando carrito desde servidor', e)
+    } catch {
+      console.error('Error cargando carrito desde servidor')
       setCart([])
     }
   }
 
   useEffect(() => {
+  // Migrar claves antiguas si existen
+    try {
+      const legacyA = localStorage.getItem('bullsCart')
+      const legacyB = localStorage.getItem('carrito')
+      if (!localStorage.getItem(STORAGE_KEY)) {
+        if (legacyA) localStorage.setItem(STORAGE_KEY, legacyA)
+        else if (legacyB) localStorage.setItem(STORAGE_KEY, legacyB)
+      }
+    } catch {
+      // ignorar errores de almacenamiento
+    }
+
+    // Cargar caché desde localStorage y luego refrescar desde servidor
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY)
+      if (raw) {
+        const parsed = JSON.parse(raw)
+        if (Array.isArray(parsed)) setCart(parsed)
+      }
+    } catch {
+      // ignorar localStorage malformado
+    }
+
     refreshCart()
-    // no dependencies: each hook instance refreshes on mount
+
+    // Sincroniza entre pestañas
+    const onStorage = (e) => {
+      if (e.key === STORAGE_KEY) {
+        try {
+          const parsed = JSON.parse(e.newValue || '[]')
+          if (Array.isArray(parsed)) setCart(parsed)
+        } catch {
+          // ignorar
+        }
+      }
+    }
+    window.addEventListener('storage', onStorage)
+    return () => window.removeEventListener('storage', onStorage)
   }, [])
 
   const addToCart = async (product) => {
     try {
       await cartApi.addToCart(product)
       await refreshCart()
-    } catch (e) {
-      console.error('Error addToCart server', e)
+    } catch {
+      console.error('Error addToCart server')
       await refreshCart()
     }
   }
@@ -44,8 +82,8 @@ export function useCart() {
     try {
       await cartApi.removeFromCart(serverId)
       await refreshCart()
-    } catch (e) {
-      console.error('Error removeFromCart server', e)
+    } catch {
+      console.error('Error removeFromCart server')
       await refreshCart()
     }
   }
@@ -56,8 +94,8 @@ export function useCart() {
     try {
       await cartApi.updateQty(serverId, q)
       await refreshCart()
-    } catch (e) {
-      console.error('Error updateQty server', e)
+    } catch {
+      console.error('Error updateQty server')
       await refreshCart()
     }
   }
@@ -67,8 +105,8 @@ export function useCart() {
       const server = await cartApi.getCart()
       await Promise.all((server || []).map((it) => cartApi.removeFromCart(it.id)))
       setCart([])
-    } catch (e) {
-      console.error('Error clearing cart on server', e)
+    } catch {
+      console.error('Error clearing cart on server')
       setCart([])
     }
   }
@@ -80,5 +118,24 @@ export function useCart() {
   const cartCount = cart.reduce((sum, it) => sum + (it.quantity || 0), 0)
   const total = cart.reduce((sum, it) => sum + (Number(it.price || 0) * (it.quantity || 0)), 0)
 
-  return { cart, addToCart, removeFromCart, changeQuantity, clearCart, cartCount, total, cartOpen, toggleCart, openCart, closeCart }
+  const value = { cart, addToCart, removeFromCart, changeQuantity, clearCart, cartCount, total, cartOpen, toggleCart, openCart, closeCart }
+
+  // Persistir carrito en localStorage al cambiar
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(cart))
+    } catch {
+      // ignorar errores de escritura (espacio lleno)
+    }
+  }, [cart])
+
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>
+}
+
+export function useCart() {
+  const ctx = useContext(CartContext)
+  if (!ctx) {
+    throw new Error('useCart must be used within a CartProvider')
+  }
+  return ctx
 }

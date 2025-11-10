@@ -1,50 +1,70 @@
-import React, { useEffect, useState } from 'react'
-import '@styles/Calendario.scss'
-import { getGames } from '@api/gamesApi'
+import { useEffect, useState } from "react";
+import "@styles/Calendario.scss";
+import { getGames } from "@api/gamesApi";
 
 const MONTH_NAMES = [
-  'ENE', 'FEB', 'MAR', 'ABR', 'MAY', 'JUN', 'JUL', 'AGO', 'SEP', 'OCT', 'NOV', 'DIC'
-]
+  "ENE",
+  "FEB",
+  "MAR",
+  "ABR",
+  "MAY",
+  "JUN",
+  "JUL",
+  "AGO",
+  "SEP",
+  "OCT",
+  "NOV",
+  "DIC",
+];
 
 const Calendario = () => {
-  const [games, setGames] = useState([])
-  const [month, setMonth] = useState('')
+  const [games, setGames] = useState([]);
+  const [month, setMonth] = useState("");
 
   useEffect(() => {
-    let mounted = true
-    ;(async () => {
+    let mounted = true;
+    (async () => {
       try {
-        const data = await getGames()
-        if (!mounted) return
-        setGames(Array.isArray(data) ? data : data.games || [])
+        const data = await getGames();
+        if (!mounted) return;
+        setGames(Array.isArray(data) ? data : data.games || []);
       } catch (err) {
-        console.error('Error al obtener games desde la API', err)
-        setGames([])
+        console.error("Error al obtener games desde la API", err);
+        setGames([]);
       }
-    })()
+    })();
     return () => {
-      mounted = false
-    }
-  }, [])
+      mounted = false;
+    };
+  }, []);
 
   const onMonthChange = (e) => {
-    setMonth(e.target.value)
-  }
+    setMonth(e.target.value);
+  };
 
   const filtered = games.filter((g) => {
-    if (!month) return true
+    if (!month) return true;
     // date tiene formato YYYY-MM-DD
-    const d = new Date(g.date)
-    const m = d.getMonth() + 1
-    return String(m) === String(month)
-  })
+    const d = new Date(g.date);
+    const m = d.getMonth() + 1;
+    return String(m) === String(month);
+  });
 
   return (
     <main className="container">
-      <section id="calendario" className="cal-listing" aria-labelledby="titulo-cal">
+      <section
+        id="calendario"
+        className="cal-listing"
+        aria-labelledby="titulo-cal"
+      >
         <h1 id="titulo-cal">Partidos de la temporada</h1>
 
-        <form className="cal-filters" action="#" method="get" aria-label="Filtrar partidos">
+        <form
+          className="cal-filters"
+          action="#"
+          method="get"
+          aria-label="Filtrar partidos"
+        >
           <label htmlFor="mes">Mes</label>
           <select id="mes" name="mes" onChange={onMonthChange} value={month}>
             <option value="">Todos</option>
@@ -68,32 +88,52 @@ const Calendario = () => {
         </p>
 
         <ul id="partidos" className="games-list">
-          {filtered.length === 0 && <p id="calEmpty" className="cal-empty">No hay partidos que coincidan con el filtro.</p>}
+          {filtered.length === 0 && (
+            <p id="calEmpty" className="cal-empty">
+              No hay partidos que coincidan con el filtro.
+            </p>
+          )}
           {filtered.map((g) => {
-            const d = new Date(g.date)
-            const day = String(d.getDate()).padStart(2, '0')
-            const mon = MONTH_NAMES[d.getMonth()]
+            const d = new Date(g.date);
+            const day = String(d.getDate()).padStart(2, "0");
+            const mon = MONTH_NAMES[d.getMonth()];
             // intentar obtener abreviatura del opponent (últimas 3 letras en mayúsc)
-            const oppAbbr = (g.opponent || '').split(' ').map(w => w[0]).slice(0,3).join('').toUpperCase()
-            const dataMonth = d.getMonth() + 1
+            const oppAbbr = (g.opponent || "")
+              .split(" ")
+              .map((w) => w[0])
+              .slice(0, 3)
+              .join("")
+              .toUpperCase();
+            const dataMonth = d.getMonth() + 1;
 
             return (
               <li className="game-card" data-month={dataMonth} key={g.id}>
                 <div className="game-left">
-                  <div className="game-date"><span className="day">{day}</span><span className="mon">{mon}</span></div>
-                  <div className="game-vs"><strong>CHI</strong> <span className="vs">vs</span> <span className="opp">{oppAbbr || g.opponent}</span></div>
-                  <span className="team-names">Chicago Bulls - {g.opponent}</span>
+                  <div className="game-date">
+                    <span className="day">{day}</span>
+                    <span className="mon">{mon}</span>
+                  </div>
+                  <div className="game-vs">
+                    <strong>CHI</strong> <span className="vs">vs</span>{" "}
+                    <span className="opp">{oppAbbr || g.opponent}</span>
+                  </div>
+                  <span className="team-names">
+                    Chicago Bulls - {g.opponent}
+                  </span>
                 </div>
-                <div className="game-right"><span className="time">{g.time}</span><div className="meta">{g.venue}</div></div>
+                <div className="game-right">
+                  <span className="time">{g.time}</span>
+                  <div className="meta">{g.venue}</div>
+                </div>
               </li>
-            )
+            );
           })}
         </ul>
 
         <div id="sponsors"></div>
       </section>
     </main>
-  )
-}
+  );
+};
 
-export default Calendario
+export default Calendario;

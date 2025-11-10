@@ -1,4 +1,3 @@
-import React from "react";
 import "@styles/Nosotros.scss";
 import chicagoImg from "@assets/nosotros/chicago.jpg";
 import estadio1 from "@assets/nosotros/estadio1.webp";
@@ -11,23 +10,23 @@ const Nosotros = () => {
       <header className="n-head">
         <h1>Nuestro ADN</h1>
         <p className="lead">
-            Esta página está pensada para acercar la historia del equipo, la
-            ciudad y su estadio a los fans hispanohablantes, celebrando tanto sus
-            grandes momentos como su presente en la liga. Aquí encontrarás
-            información sobre sus raíces, íconos, cultura y logros, todo en un
-            solo lugar para que vivas la experiencia Bulls.
+          Esta página está pensada para acercar la historia del equipo, la
+          ciudad y su estadio a los fans hispanohablantes, celebrando tanto sus
+          grandes momentos como su presente en la liga. Aquí encontrarás
+          información sobre sus raíces, íconos, cultura y logros, todo en un
+          solo lugar para que vivas la experiencia Bulls.
         </p>
       </header>
 
       <section className="panel">
         <h2 className="section-title">Chicago</h2>
         <p className="text">
-            Chicago, Illinois es una ciudad vibrante situada a orillas del Lago
-            Míchigan, reconocida por su imponente arquitectura, sus museos,
-            teatros y festivales que la convierten en un centro cultural de
-            Estados Unidos. La gastronomía, y su fuerte identidad deportiva la
-            hacen única. Además, es el hogar de los legendarios Chicago Bulls,
-            símbolo de pasión y orgullo para la ciudad.
+          Chicago, Illinois es una ciudad vibrante situada a orillas del Lago
+          Míchigan, reconocida por su imponente arquitectura, sus museos,
+          teatros y festivales que la convierten en un centro cultural de
+          Estados Unidos. La gastronomía, y su fuerte identidad deportiva la
+          hacen única. Además, es el hogar de los legendarios Chicago Bulls,
+          símbolo de pasión y orgullo para la ciudad.
         </p>
         <figure className="hero-figure">
           <img

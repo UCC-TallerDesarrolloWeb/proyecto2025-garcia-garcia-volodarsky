@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Button from "@components/Button";
 import newsDraft from "@assets/news/noticia-draft-landon-olbrich.jpg";
 import newsDonovan from "@assets/news/Noticia-BillyDonovan2025-2026.jpg";
 import newsUniform from "@assets/news/Noticia-nuevouniforme.jpg";
@@ -10,7 +10,7 @@ const Home = () => {
         <h1>Chicago Bulls</h1>
       </section>
 
-  <section id="noticias" className="news-3up">
+      <section id="noticias" className="news-3up">
         <h2 className="visually-hidden">Noticias</h2>
         <div className="news-grid">
           <article className="news-card">
@@ -53,7 +53,7 @@ const Home = () => {
         </div>
       </section>
 
-  <section id="proximo-partido" className="next-game">
+      <section id="proximo-partido" className="next-game">
         <h2 className="section-title">Próximo partido</h2>
         <div className="next-game-card">
           <div className="teams">
@@ -71,32 +71,31 @@ const Home = () => {
             <p className="date">Sáb 12 Oct · 21:00</p>
             <p className="venue">United Center</p>
           </div>
-          <Link className="btn primary" to="/calendario">
+          <Button to="/calendario" variant="primary">
             Más partidos
-          </Link>
+          </Button>
         </div>
       </section>
 
-  <section className="home-actions">
+      <section className="home-actions">
         <div className="actions-row">
-          <Link className="btn primary" to="/roster">
+          <Button to="/roster" variant="primary">
             Roster
-          </Link>
-          <Link className="btn primary" to="/calendario">
+          </Button>
+          <Button to="/calendario" variant="primary">
             Calendario
-          </Link>
-          <Link className="btn primary" to="/historia">
+          </Button>
+          <Button to="/historia" variant="primary">
             Historia
-          </Link>
-          <Link className="btn primary" to="/nosotros">
+          </Button>
+          <Button to="/nosotros" variant="primary">
             Nosotros
-          </Link>
-          <Link className="btn primary" to="/shop">
+          </Button>
+          <Button to="/shop" variant="primary">
             Shop
-          </Link>
+          </Button>
         </div>
       </section>
-
     </>
   );
 };

@@ -555,14 +555,5 @@
       "result": null
     }
   ],
-  "cart": [
-    {
-      "id": "d479",
-      "productId": "1",
-      "name": "Camiseta Home 24/25",
-      "price": 29999,
-      "qty": 4,
-      "image": "camisetalocal.jpg"
-    }
-  ]
+  "cart": []
 }

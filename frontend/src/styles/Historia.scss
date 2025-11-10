@@ -1,5 +1,3 @@
-/* Historia page styles copied from original styles */
-/* Historia (copiado del css original) */
 .historia .page-header {
     margin-bottom: 16px;
 }
@@ -8,7 +6,6 @@
     color: #d0d0d0;
 }
 
-/* Timeline */
 .timeline {
     margin-top: 10px;
 }
@@ -48,7 +45,7 @@
     color: #d2d2d2;
 }
 
-/* Figuras */
+/* Jugadores */
 .figuras {
     margin-top: 24px;
 }
@@ -91,7 +88,7 @@
     color: #d2d2d2;
 }
 
-/* Trophies */
+/* Trofeos */
 .trophies {
     margin-top: 24px;
 }
@@ -123,8 +120,6 @@
     color: #d0d0d0;
 }
 
-
-/* Quote */
 .quote {
     margin-top: 24px;
     background: linear-gradient(135deg, #1b1b1b, #24161a);
@@ -146,7 +141,6 @@
     margin-top: 6px;
 }
 
-/* FAQ (sin JS) */
 .faq {
     margin-top: 24px;
 }
@@ -167,15 +161,4 @@
 .faq-item p {
     margin-top: 8px;
     color: #d2d2d2;
-}
-
-/* Responsive */
-@media (max-width: 980px) {
-    .figuras-grid { grid-template-columns: 1fr 1fr; }
-}
-
-@media (max-width: 640px) {
-    .t-item { grid-template-columns: 1fr; }
-    .figuras-grid { grid-template-columns: 1fr; }
-    .trophies-list { grid-template-columns: 1fr; }
 }

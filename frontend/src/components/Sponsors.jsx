@@ -1,10 +1,10 @@
-import moto from '@assets/sponsors/logo-motorola.jpg'
-import nike from '@assets/sponsors/logo-nike.jpg'
-import foot from '@assets/sponsors/logo-FootLocker.jpg'
+import moto from "@assets/sponsors/logo-motorola.jpg";
+import nike from "@assets/sponsors/logo-nike.jpg";
+import foot from "@assets/sponsors/logo-FootLocker.jpg";
 
 const Sponsors = () => {
   return (
-  <section className="sponsors" aria-label="Sponsors">
+    <section className="sponsors" aria-label="Sponsors">
       <h2>Nuestros Sponsors</h2>
       <div className="sponsors-grid">
         <figure className="sponsor">
@@ -18,7 +18,7 @@ const Sponsors = () => {
         </figure>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Sponsors
+export default Sponsors;

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useCart } from '@components/CartContext'
+import Button from '@components/Button'
 import '@styles/Checkout.scss'
 
 const Checkout = () => {
@@ -8,7 +9,7 @@ const Checkout = () => {
 
   useEffect(() => {
     if (!cart || cart.length === 0) {
-      // if cart empty, user should go to store — we won't redirect automatically here
+      // Si no hay elementos en el carrito, el usuario deberia ir a shop
     }
   }, [cart])
 
@@ -28,6 +29,9 @@ const Checkout = () => {
           <div className="success-icon">✓</div>
           <h2>¡Compra Realizada!</h2>
           <p>Muchas gracias por tu compra. Recibirás un email con los detalles del pedido.</p>
+          <div className="success-actions">
+            <Button to="/shop" variant="primary">Continuar Comprando</Button>
+          </div>
         </div>
       </div>
     )
@@ -94,7 +98,8 @@ const Checkout = () => {
             </div>
 
             <div className="checkout-actions">
-              <button type="submit" className="btn primary">Confirmar Compra</button>
+              <Button to="/shop" variant="secondary">Volver al Shop</Button>
+              <Button variant="primary" type="submit">Confirmar Compra</Button>
             </div>
           </form>
         </div>

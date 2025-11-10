@@ -1,10 +1,10 @@
-import { useCart } from '@components/CartContext'
-import '@styles/Cart.scss'
+import { useCart } from "@components/CartContext";
+import "@styles/Cart.scss";
 
 const Cart = () => {
-  const { cart, changeQuantity, removeFromCart, clearCart, total } = useCart()
+  const { cart, changeQuantity, removeFromCart, clearCart, total } = useCart();
 
-  if (!cart || cart.length === 0) return <h2>Carrito vacío</h2>
+  if (!cart || cart.length === 0) return <h2>Carrito vacío</h2>;
 
   return (
     <div>
@@ -14,7 +14,7 @@ const Cart = () => {
           <li key={item.id} className="cart-item">
             <div className="cart-item-main">
               <strong>{item.name}</strong>
-              <div>{item.price ? '$ ' + item.price.toLocaleString() : ''}</div>
+              <div>{item.price ? "$ " + item.price.toLocaleString() : ""}</div>
             </div>
             <div className="cart-item-actions">
               <input
@@ -29,14 +29,16 @@ const Cart = () => {
         ))}
       </ul>
       <div className="cart-footer">
-  <strong>Total: {total ? '$ ' + total.toLocaleString() : '$ 0'}</strong>
+        <strong>Total: {total ? "$ " + total.toLocaleString() : "$ 0"}</strong>
         <div className="cart-actions">
           <button onClick={clearCart}>Vaciar carrito</button>
-          <button onClick={() => alert('Aquí iría el flujo de checkout')}>Pagar</button>
+          <button onClick={() => alert("Aquí iría el flujo de checkout")}>
+            Pagar
+          </button>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Cart
+export default Cart;
