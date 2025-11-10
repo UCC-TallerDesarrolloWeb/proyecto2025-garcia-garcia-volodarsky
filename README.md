@@ -86,8 +86,6 @@ Además de la versión estática del sitio (archivos en la raíz), en `frontend/
 - **Vite + React** como base (`frontend/package.json`, `vite.config.js`).
 - **Estado global del carrito** con `CartProvider` (`frontend/src/components/CartContext.jsx`):
   - Persistencia en **localStorage** (`bulls_cart`).
-  - Migración automática desde claves antiguas (`bullsCart`, `carrito`).
-  - Sincronización entre pestañas usando el evento `storage`.
 - **Componentes principales**:
   - `CartSidebar.jsx` — sidebar del carrito y controles de cantidad.
   - `Button.jsx` — componente reutilizable para botones/enlaces con estilo unificado.
