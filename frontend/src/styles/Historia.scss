@@ -1,164 +1,166 @@
 .historia .page-header {
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .historia .lead {
-    color: #d0d0d0;
+  color: #d0d0d0;
 }
 
 .timeline {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .timeline h2 {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .t-item {
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 14px;
-    background: #1b1b1b;
-    border: 1px solid #262626;
-    border-radius: 12px;
-    padding: 14px;
-    margin-bottom: 12px;
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 14px;
+  background: #1b1b1b;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 14px;
+  margin-bottom: 12px;
 }
 
 .t-year {
-    font-weight: 800;
-    font-size: 1.1rem;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #191919;
-    border: 1px solid #262626;
-    border-radius: 10px;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #fff;
+  background: #191919;
+  border: 1px solid #262626;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  line-height: 80px;
 }
 
 .t-card h3 {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
 }
 
 .t-card p {
-    color: #d2d2d2;
+  color: #d2d2d2;
 }
 
 /* Jugadores */
 .figuras {
-    margin-top: 24px;
+  margin-top: 24px;
 }
 
 .figuras-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
 }
 
 .fig-card {
-    background: #1b1b1b;
-    border: 1px solid #262626;
-    border-radius: 12px;
-    overflow: hidden;
+  background: #1b1b1b;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .fig-card img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    object-position: center center;
-    display: block;
-    background: #222;
-    border-radius: 50%;
-    margin: 18px auto 10px auto;
+  width: 120px;
+  height: 120px;
+  display: block;
+  background: #222;
+  border-radius: 50%;
+  margin: 18px auto 10px auto;
 }
 
 .fig-card figcaption {
-    padding: 12px;
+  padding: 12px;
 }
 
 .fig-card h3 {
-    margin-bottom: 6px;
-    color: #ce1141;
-    font-weight: 700;
+  margin-bottom: 6px;
+  color: #ce1141;
+  font-weight: 700;
 }
 
 .fig-card p {
-    color: #d2d2d2;
+  color: #d2d2d2;
 }
 
 /* Trofeos */
 .trophies {
-    margin-top: 24px;
+  margin-top: 24px;
 }
 
 .trophies-list {
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 12px 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin: 12px 0;
 }
 
 .trophy {
-    background: #1b1b1b;
-    border: 1px solid #262626;
-    border-radius: 12px;
-    padding: 14px;
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  background: #1b1b1b;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 14px;
+  overflow: hidden;
+}
+
+.trophy > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
 }
 
 .t-num {
-    font-size: 28px;
-    font-weight: 800;
+  font-size: 28px;
+  font-weight: 800;
 }
 
 .t-label {
-    color: #d0d0d0;
+  color: #d0d0d0;
 }
 
 .quote {
-    margin-top: 24px;
-    background: linear-gradient(135deg, #1b1b1b, #24161a);
-    border: 1px solid #262626;
-    border-radius: 16px;
-    padding: 18px;
+  margin-top: 24px;
+  background: linear-gradient(135deg, #1b1b1b, #24161a);
+  border: 1px solid #262626;
+  border-radius: 16px;
+  padding: 18px;
 }
 
 .quote blockquote {
-    margin: 0;
+  margin: 0;
 }
 
 .quote p {
-    font-size: 1.1rem;
+  font-size: 1.1rem;
 }
 
 .quote footer {
-    color: #cfcfcf;
-    margin-top: 6px;
+  color: #cfcfcf;
+  margin-top: 6px;
 }
 
 .faq {
-    margin-top: 24px;
+  margin-top: 24px;
 }
 
 .faq-item {
-    background: #1b1b1b;
-    border: 1px solid #262626;
-    border-radius: 12px;
-    padding: 12px;
-    margin-bottom: 10px;
+  background: #1b1b1b;
+  border: 1px solid #262626;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 10px;
 }
 
 .faq-item summary {
-    cursor: pointer;
-    font-weight: 700;
+  cursor: pointer;
+  font-weight: 700;
 }
 
 .faq-item p {
-    margin-top: 8px;
-    color: #d2d2d2;
+  margin-top: 8px;
+  color: #d2d2d2;
 }

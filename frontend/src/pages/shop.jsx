@@ -25,7 +25,6 @@ const matchPrecio = (p, bucket) => {
 
 const Shop = () => {
   const [products, setProducts] = useState([]);
-  const [selected, setSelected] = useState(null);
   const [q, setQ] = useState("");
   const [cat, setCat] = useState("");
   const [talle, setTalle] = useState("");
@@ -52,8 +51,11 @@ const Shop = () => {
         const res = await getProducts();
         if (!mounted) return;
         // getProducts may return an array or an object
-        if (Array.isArray(res)) setProducts(res);
-        else setProducts(res.productos || res.products || []);
+        if (Array.isArray(res)) {
+          setProducts(res);
+        } else {
+          setProducts(res.productos || res.products || []);
+        }
       } catch (e) {
         console.error("Error loading products", e);
       }
@@ -68,8 +70,6 @@ const Shop = () => {
     document.body.classList.add("shop-page");
     return () => document.body.classList.remove("shop-page");
   }, []);
-
-  const cerrarModal = () => setSelected(null);
 
   const term = norm(q);
   let visibles = products.filter((card) => {
@@ -174,24 +174,6 @@ const Shop = () => {
           </div>
         ))}
       </section>
-
-      {selected && (
-        <div className="modalProd">
-          <h2>Detalle del producto</h2>
-          <p>{selected.name}</p>
-          <p>{selected.description}</p>
-          <p>{selected.price ? "$ " + selected.price.toLocaleString() : ""}</p>
-          <button
-            onClick={() => {
-              addToCart(selected);
-              cerrarModal();
-            }}
-          >
-            Agregar y cerrar
-          </button>
-          <button onClick={cerrarModal}>Cerrar</button>
-        </div>
-      )}
     </>
   );
 };

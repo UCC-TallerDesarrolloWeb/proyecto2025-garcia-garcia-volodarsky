@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
  * @method toggleMenu
  * @returns {void}
  */
-const toggleMenu = () => {
-    const nav = document.querySelector('.primary-nav');
-    const toggle = document.getElementById('menuToggle');
+let toggleMenu = () => {
+    let nav = document.querySelector('.primary-nav');
+    let toggle = document.getElementById('menuToggle');
 
     if (nav && toggle) {
         nav.classList.toggle('active');
@@ -77,8 +77,8 @@ window.toggleMenu = toggleMenu;
 // Cerrar menú al hacer click en un link
 document.addEventListener('click', (e) => {
     if (e.target.matches('.primary-nav a')) {
-        const nav = document.querySelector('.primary-nav');
-        const toggle = document.getElementById('menuToggle');
+        let nav = document.querySelector('.primary-nav');
+        let toggle = document.getElementById('menuToggle');
 
         if (nav && toggle) {
             nav.classList.remove('active');
@@ -90,8 +90,8 @@ document.addEventListener('click', (e) => {
 // Cerrar menú al redimensionar ventana
 window.addEventListener('resize', () => {
     if (window.innerWidth > 640) {
-        const nav = document.querySelector('.primary-nav');
-        const toggle = document.getElementById('menuToggle');
+        let nav = document.querySelector('.primary-nav');
+        let toggle = document.getElementById('menuToggle');
 
         if (nav && toggle) {
             nav.classList.remove('active');
@@ -202,7 +202,7 @@ const loadCart = () => {
  * @method saveCart
  * @returns {void}
  */
-const saveCart = () => {
+let saveCart = () => {
     localStorage.setItem('bullsCart', JSON.stringify(cart));
 };
 
@@ -213,7 +213,7 @@ const saveCart = () => {
  * @param {number} price Precio en unidades enteras (p.ej. 29999)
  * @returns {void}
  */
-const addToCart = (name, price) => {
+let addToCart = (name, price) => {
     const existing = cart.find(item => item.name === name);
     if (existing) {
         existing.quantity += 1;
@@ -232,7 +232,7 @@ window.addToCart = addToCart;
  * @param {string} name Nombre del producto a eliminar
  * @returns {void}
  */
-const removeFromCart = (name) => {
+let removeFromCart = (name) => {
     cart = cart.filter(item => item.name !== name);
     saveCart();
     updateCartDisplay();
@@ -247,7 +247,7 @@ const removeFromCart = (name) => {
  * @param {number} change Incremento (+1) o decremento (-1)
  * @returns {void}
  */
-const changeQuantity = (name, change) => {
+let changeQuantity = (name, change) => {
     const item = cart.find(item => item.name === name);
     if (item) {
         item.quantity += change;
@@ -265,7 +265,7 @@ const changeQuantity = (name, change) => {
  * @method clearCart
  * @returns {void}
  */
-const clearCart = () => {
+let clearCart = () => {
     cart = [];
     localStorage.removeItem('bullsCart');
     updateCartDisplay();
@@ -278,7 +278,7 @@ const clearCart = () => {
  * @method updateCartDisplay
  * @returns {void}
  */
-const updateCartDisplay = () => {
+let updateCartDisplay = () => {
         const cartCount = document.getElementById('cartCount');
         const cartCounter = document.getElementById('cartCounter');
         const cartItems = document.getElementById('cartItems');
@@ -292,7 +292,7 @@ const updateCartDisplay = () => {
         // Mostrar contador si estamos en shop.html o si hay items en otras páginas
         if (cartCounter) {
                 const isShopPage = window.location.pathname.includes('shop.html');
-                cartCounter.style.display = (isShopPage || totalItems > 0) ? 'block' : 'none';
+                cartCounter.style.display = (isShopPage || totalItems > 0) ? 'inline-block' : 'none';
         }
 
         if (cartTotal) cartTotal.textContent = totalPrice.toLocaleString();
@@ -351,7 +351,7 @@ const hideCartSection = () => {
  * @method toggleCart
  * @returns {void}
  */
-const toggleCart = () => {
+let toggleCart = () => {
     const sidebar = document.getElementById('cartSidebar');
     const overlay = document.getElementById('cartOverlay');
 
@@ -381,7 +381,7 @@ window.toggleCart = toggleCart;
  * @method closeCart
  * @returns {void}
  */
-const closeCart = () => {
+let closeCart = () => {
     const sidebar = document.getElementById('cartSidebar');
     const overlay = document.getElementById('cartOverlay');
 
@@ -400,7 +400,7 @@ window.closeCart = closeCart;
  * @method checkout
  * @returns {void}
  */
-const checkout = () => {
+let checkout = () => {
     if (cart.length === 0) {
         alert('El carrito está vacío');
         return;
@@ -422,7 +422,7 @@ const initShop = () => {
     // pero NO abrir el sidebar automáticamente
     const cartCounter = document.getElementById('cartCounter');
     if (cartCounter) {
-        cartCounter.style.display = 'block';
+        cartCounter.style.display = 'inline-block';
     }
 
     const q = document.getElementById("qShop");

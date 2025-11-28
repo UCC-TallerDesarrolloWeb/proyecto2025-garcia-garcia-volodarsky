@@ -122,8 +122,9 @@ const Calendario = () => {
                   </span>
                 </div>
                 <div className="game-right">
+                  <span className="meta">{g.venue}</span>{" "}
+                  <span className="separator">-</span>{" "}
                   <span className="time">{g.time}</span>
-                  <div className="meta">{g.venue}</div>
                 </div>
               </li>
             );

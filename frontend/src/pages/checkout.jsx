@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useCart } from '@components/CartContext'
 import Button from '@components/Button'
 import '@styles/Checkout.scss'

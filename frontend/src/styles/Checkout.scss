@@ -33,7 +33,7 @@
   gap: 16px;
 }
 .form-group {
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 .form-group label {
   display: block;
@@ -50,11 +50,11 @@
   background: #111;
   color: #f5f5f5;
   font-size: 1rem;
+  box-sizing: border-box;
 }
 .form-group input:focus {
   outline: none;
   border-color: #ce1141;
-  box-shadow: 0 0 0 2px rgba(206, 17, 65, 0.2);
 }
 
 .checkout-summary-section {
@@ -66,7 +66,7 @@
   border-radius: 12px;
   padding: 24px;
   position: sticky;
-  top: 100px;
+  top: 80px;
 }
 .checkout-summary h3 {
   color: #ce1141;
@@ -74,8 +74,8 @@
 }
 
 .checkout-item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
   padding: 12px 0;
   border-bottom: 1px solid #262626;
 }
@@ -94,25 +94,17 @@
 }
 
 .checkout-actions {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-top: 30px;
 }
 .checkout-actions .btn {
-  flex: 1;
   padding: 16px 24px;
   font-size: 1.1rem;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-}
-.btn.secondary {
-  background: #262626;
-  color: #f5f5f5;
-  border: 1px solid #404040;
-}
-.btn.secondary:hover {
-  background: #404040;
 }
 
 .success-modal {
@@ -123,9 +115,6 @@
   height: 100vh;
   background: rgba(0, 0, 0, 0.8);
   z-index: 2000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s ease;
@@ -142,6 +131,10 @@
   text-align: center;
   max-width: 400px;
   width: 90%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .success-icon {
   font-size: 4rem;

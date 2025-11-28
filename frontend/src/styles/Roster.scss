@@ -1,149 +1,146 @@
 /* Cards del roster: tamaño uniforme */
 .roster-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .player-card {
-    background: #fff;
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    padding: 1.2rem 1rem 1.5rem 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 370px;
-    max-width: 260px;
-    margin: 0 auto;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  text-align: center;
+  min-height: 370px;
+  max-width: 260px;
+  margin: 0 auto;
 }
 
 .player-card .card-img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    background: #f3f3f3;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.07);
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  background: #f3f3f3;
+  display: inline-block;
 }
 
 .player-card .card-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .player-card .card-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    font-size: 0.98rem;
-    width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.98rem;
+  width: 100%;
 }
 
 .player-card .card-info li {
-    margin-bottom: 0.2rem;
-    text-align: left;
+  margin-bottom: 0.2rem;
+  text-align: left;
 }
 
 /* Roster page helpers */
 .roster-legend {
-    color: #d0d0d0;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
+  color: #d0d0d0;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
 }
 
 .roster-filters {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.roster-filters > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .roster-filters label {
-    color: #d7d7d7;
+  color: #d7d7d7;
 }
 
 .roster-filters select {
-    padding: 8px 10px;
-    border-radius: 8px;
-    border: 1px solid #2d2d2d;
-    background: #141414;
-    color: #f5f5f5;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #2d2d2d;
+  background: #141414;
+  color: #f5f5f5;
 }
 
 .tabla-roster th,
 .tabla-roster td {
-    white-space: nowrap;
+  white-space: nowrap;
 }
 
 .tabla-roster thead th {
-    position: sticky;
-    top: 0;
-    z-index: 1;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .tabla-roster tbody tr:nth-child(even) {
-    background: #181818;
+  background: #181818;
 }
 
 .tabla-roster td:focus-within,
 .tabla-roster th:focus-within {
-    outline: 2px solid #ce1141;
-    outline-offset: -2px;
+  outline: 2px solid #ce1141;
+  outline-offset: -2px;
 }
 
-// ROSTER CARDS 
+// ROSTER CARDS
 .roster-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 28px;
-    margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+  margin-top: 32px;
 }
 
 .card {
-    background: #1b1b1b;
-    border: 1px solid #262626;
-    border-radius: 16px;
-    padding: 18px;
-    color: #f5f5f5;
-    max-width: 320px;
-    margin: 0 auto;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: #1b1b1b;
+  border: 1px solid #262626;
+  border-radius: 16px;
+  padding: 18px;
+  color: #f5f5f5;
+  max-width: 320px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .card-img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 14px;
-    background: #fff;
-    border: 2px solid #ce1141;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 14px;
+  background: #fff;
+  border: 2px solid #ce1141;
+  display: inline-block;
 }
 
 .card-title {
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #ce1141;
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #ce1141;
 }
 
 .card-info {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
 }
 
 .card-info li {
-    font-size: 1rem;
-    margin-bottom: 6px;
-    text-align: left;
+  font-size: 1rem;
+  margin-bottom: 6px;
+  text-align: left;
 }

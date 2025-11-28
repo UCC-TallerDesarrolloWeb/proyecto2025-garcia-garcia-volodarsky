@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "@components/CartContext";
 
@@ -6,7 +5,6 @@ const logo = "/logo-bulls.png";
 
 const Header = () => {
   const { cartCount, toggleCart } = useCart();
-  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="site-header">
@@ -15,10 +13,7 @@ const Header = () => {
         <span>Chicago Bulls</span>
       </div>
       <div className="header-right">
-        <nav
-          className={`primary-nav ${menuOpen ? "active" : ""}`}
-          aria-label="Principal"
-        >
+        <nav className="primary-nav" aria-label="Principal">
           <ul>
             <li>
               <Link to="/">Inicio</Link>
@@ -50,17 +45,6 @@ const Header = () => {
             🛒 <span id="cartCount">{cartCount}</span>
           </span>
         </div>
-
-        <button
-          className={`menu-toggle ${menuOpen ? "active" : ""}`}
-          id="menuToggle"
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-          onClick={() => setMenuOpen((s) => !s)}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
       </div>
     </header>
   );

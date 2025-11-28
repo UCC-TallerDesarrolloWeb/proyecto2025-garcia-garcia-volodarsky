@@ -1,8 +1,12 @@
 .cal-filters {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.cal-filters > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
 }
 
 .cal-filters label {
@@ -33,7 +37,6 @@
 .game-card {
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: center;
   gap: 12px;
   background: #1b1b1b;
   border: 1px solid #262626;
@@ -42,81 +45,99 @@
 }
 
 .game-left {
-  display: flex;
-  align-items: center;
-  gap: 14px;
+  overflow: hidden;
+}
+
+.game-left > * {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 14px;
 }
 
 .game-date {
   width: 58px;
   height: 58px;
   border-radius: 12px;
-  display: grid;
-  place-items: center;
   background: #191919;
   border: 1px solid #262626;
   text-align: center;
   line-height: 1;
+  position: relative;
 }
 
 .game-date .day {
   display: block;
   font-weight: 800;
   font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -6px;
+  width: 100%;
 }
 
 .game-date .mon {
   display: block;
   font-size: 12px;
   color: #cfcfcf;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 9px;
+  width: 100%;
 }
 
 .game-vs {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+  display: inline-block;
+  vertical-align: middle;
 }
 
+.game-vs strong,
+.game-vs .vs,
 .game-vs .opp {
+  display: inline;
+  font-size: 1.25rem;
   font-weight: 700;
 }
 
+.game-vs .vs {
+  margin: 0 8px;
+}
+
+.team-names {
+  display: block;
+  font-size: 0.98rem;
+  color: #ccc;
+  font-weight: 400;
+  margin-top: 2px;
+}
+
 .game-right {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  flex-direction: row-reverse;
+  text-align: right;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.game-right .meta {
+  display: inline;
+  color: #cfcfcf;
+  font-size: 0.95rem;
+}
+
+.game-right .separator {
+  display: inline;
+  color: #999;
+  margin: 0 4px;
 }
 
 .game-right .time {
+  display: inline;
   color: #ddd;
-}
-
-.game-right .time::before {
-  content: "- ";
-  color: #999;
 }
 
 .cal-empty {
   color: #cfcfcf;
   margin-top: 8px;
-}
-
-.game-vs {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  flex-direction: row;
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 2px;
-}
-
-.team-names {
-  display: block;
-  margin-left: 0;
-  font-size: 0.98rem;
-  color: #ccc;
-  font-weight: 400;
-  margin-bottom: 2px;
 }
