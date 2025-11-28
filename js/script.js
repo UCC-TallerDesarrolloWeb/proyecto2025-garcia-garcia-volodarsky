@@ -283,6 +283,7 @@ let updateCartDisplay = () => {
         const cartCounter = document.getElementById('cartCounter');
         const cartItems = document.getElementById('cartItems');
         const cartTotal = document.getElementById('cartTotal');
+        const cartFooter = document.querySelector('.cart-footer');
 
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
@@ -296,6 +297,11 @@ let updateCartDisplay = () => {
         }
 
         if (cartTotal) cartTotal.textContent = totalPrice.toLocaleString();
+
+        // Mostrar u ocultar footer del carrito según si hay productos
+        if (cartFooter) {
+                cartFooter.style.display = cart.length > 0 ? '' : 'none';
+        }
 
             if (cartItems) {
                     if (cart.length === 0) {

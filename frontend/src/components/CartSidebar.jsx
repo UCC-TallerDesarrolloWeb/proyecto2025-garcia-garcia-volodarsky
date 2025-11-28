@@ -80,29 +80,31 @@ const CartSidebar = () => {
           </div>
         )}
       </div>
-      <div className="cart-footer">
-        <div className="cart-total">
-          <strong>Total: ${total.toLocaleString()}</strong>
+      {cart.length > 0 && (
+        <div className="cart-footer">
+          <div className="cart-total">
+            <strong>Total: ${total.toLocaleString()}</strong>
+          </div>
+          <div className="cart-actions">
+            <Button
+              onClick={() => {
+                clearCart();
+              }}
+            >
+              Vaciar Carrito
+            </Button>
+            <Button
+              variant="primary"
+              onClick={() => {
+                closeCart();
+                navigate("/checkout");
+              }}
+            >
+              Finalizar Compra
+            </Button>
+          </div>
         </div>
-        <div className="cart-actions">
-          <Button
-            onClick={() => {
-              clearCart();
-            }}
-          >
-            Vaciar Carrito
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              closeCart();
-              navigate("/checkout");
-            }}
-          >
-            Finalizar Compra
-          </Button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };

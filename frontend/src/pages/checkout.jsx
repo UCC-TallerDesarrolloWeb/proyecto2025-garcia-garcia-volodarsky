@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useCart } from '@components/CartContext'
 import Button from '@components/Button'
+import { formatCardNumber, formatCardExpiry, formatCVV, formatDNI, formatPhone } from '@utils/formatters'
 import '@styles/Checkout.scss'
 
 const Checkout = () => {
@@ -52,12 +53,27 @@ const Checkout = () => {
                 </div>
                 <div className="form-group">
                   <label htmlFor="dni">DNI *</label>
-                  <input type="text" id="dni" name="dni" pattern="[0-9]{7,8}" required maxLength={8} />
+                  <input 
+                    type="text" 
+                    id="dni" 
+                    name="dni" 
+                    pattern="[0-9]{7,8}" 
+                    required 
+                    maxLength={8}
+                    onInput={(e) => e.target.value = formatDNI(e.target.value)}
+                  />
                 </div>
               </div>
               <div className="form-group">
                 <label htmlFor="phone">Teléfono *</label>
-                <input type="tel" id="phone" name="phone" required maxLength={15} />
+                <input 
+                  type="tel" 
+                  id="phone" 
+                  name="phone" 
+                  required 
+                  maxLength={15}
+                  onInput={(e) => e.target.value = formatPhone(e.target.value)}
+                />
               </div>
             </div>
 
@@ -83,16 +99,40 @@ const Checkout = () => {
               <h3>Datos de Pago</h3>
               <div className="form-group">
                 <label htmlFor="cardNumber">Número de Tarjeta *</label>
-                <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxLength={19} required />
+                <input 
+                  type="text" 
+                  id="cardNumber" 
+                  name="cardNumber" 
+                  placeholder="1234 5678 9012 3456" 
+                  maxLength={19} 
+                  required
+                  onInput={(e) => e.target.value = formatCardNumber(e.target.value)}
+                />
               </div>
               <div className="form-row">
                 <div className="form-group">
                   <label htmlFor="cardExpiry">Vencimiento *</label>
-                  <input type="text" id="cardExpiry" name="cardExpiry" placeholder="MM/AA" maxLength={5} required />
+                  <input 
+                    type="text" 
+                    id="cardExpiry" 
+                    name="cardExpiry" 
+                    placeholder="MM/AA" 
+                    maxLength={5} 
+                    required
+                    onInput={(e) => e.target.value = formatCardExpiry(e.target.value)}
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="cardCvv">CVV *</label>
-                  <input type="text" id="cardCvv" name="cardCvv" placeholder="123" maxLength={3} required />
+                  <input 
+                    type="text" 
+                    id="cardCvv" 
+                    name="cardCvv" 
+                    placeholder="123" 
+                    maxLength={3} 
+                    required
+                    onInput={(e) => e.target.value = formatCVV(e.target.value)}
+                  />
                 </div>
               </div>
             </div>
@@ -119,7 +159,7 @@ const Checkout = () => {
           </div>
         </div>
       </div>
-      </main>
+    </main>
   )
 }
 

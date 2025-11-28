@@ -557,12 +557,12 @@
   ],
   "cart": [
     {
-      "id": "66d5",
-      "productId": "5",
-      "name": "Short Classic",
-      "price": 25999,
-      "qty": 6,
-      "image": "short.avif"
+      "id": "9539",
+      "productId": "2",
+      "name": "Camiseta Away 24/25",
+      "price": 31999,
+      "qty": 2,
+      "image": "camisetavisita.jpg"
     }
   ]
 }

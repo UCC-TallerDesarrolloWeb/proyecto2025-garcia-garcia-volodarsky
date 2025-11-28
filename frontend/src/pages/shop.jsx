@@ -11,7 +11,6 @@ const norm = (s) =>
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
-    .trim()
     .trim();
 
 const matchPrecio = (p, bucket) => {
@@ -97,6 +96,7 @@ const Shop = () => {
       <h1>Shop Chicago Bulls</h1>
 
       <form className="shop-filters" onSubmit={(e) => e.preventDefault()}>
+        <label htmlFor="qShop" className="visually-hidden">Buscar</label>
         <input
           type="search"
           id="qShop"
@@ -104,43 +104,47 @@ const Shop = () => {
           onChange={(e) => setQ(e.target.value)}
           placeholder="Buscar…"
         />
+        <label htmlFor="catShop" className="visually-hidden">Categoría</label>
         <select
           id="catShop"
           value={cat}
           onChange={(e) => setCat(e.target.value)}
         >
-          <option value="">Categoría</option>
+          <option value="">Todas</option>
           <option value="camiseta">Camiseta</option>
           <option value="gorra">Gorra</option>
         </select>
+        <label htmlFor="talleShop" className="visually-hidden">Talle</label>
         <select
           id="talleShop"
           value={talle}
           onChange={(e) => setTalle(e.target.value)}
         >
-          <option value="">Talle</option>
+          <option value="">Todos</option>
           <option value="S">S</option>
           <option value="M">M</option>
           <option value="L">L</option>
           <option value="XL">XL</option>
           <option value="U">U</option>
         </select>
+        <label htmlFor="precioShop" className="visually-hidden">Precio</label>
         <select
           id="precioShop"
           value={precio}
           onChange={(e) => setPrecio(e.target.value)}
         >
-          <option value="">Precio</option>
+          <option value="">Todos</option>
           <option value="1">Hasta $20.000</option>
           <option value="2">$20.001 – $40.000</option>
           <option value="3">Más de $40.000</option>
         </select>
+        <label htmlFor="ordenShop" className="visually-hidden">Orden</label>
         <select
           id="ordenShop"
           value={orden}
           onChange={(e) => setOrden(e.target.value)}
         >
-          <option value="">Orden</option>
+          <option value="">Sin orden</option>
           <option value="price-asc">Precio (↑)</option>
           <option value="price-desc">Precio (↓)</option>
           <option value="name-asc">Nombre (A–Z)</option>

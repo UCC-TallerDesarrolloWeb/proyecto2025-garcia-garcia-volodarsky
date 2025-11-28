@@ -17,8 +17,10 @@ const Cart = () => {
               <div>{item.price ? "$ " + item.price.toLocaleString() : ""}</div>
             </div>
             <div className="cart-item-actions">
+              <label htmlFor={`qty-${item.id}`} className="visually-hidden">Cantidad de {item.name}</label>
               <input
                 type="number"
+                id={`qty-${item.id}`}
                 min="1"
                 value={item.quantity}
                 onChange={(e) => changeQuantity(item.id, e.target.value)}
