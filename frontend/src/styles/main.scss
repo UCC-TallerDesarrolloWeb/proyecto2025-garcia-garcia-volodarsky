@@ -297,10 +297,7 @@ h1 {
   padding: 0 20px;
 }
 
-.btn {
-  border-radius: 12px;
-}
-.btn.primary {
+.primary {
   background: #ce1141;
   color: #fff;
   border-radius: 12px;
@@ -313,6 +310,6 @@ h1 {
   white-space: nowrap;
   text-align: center;
 }
-.btn.primary:hover {
+.primary:hover {
   opacity: 0.9;
 }

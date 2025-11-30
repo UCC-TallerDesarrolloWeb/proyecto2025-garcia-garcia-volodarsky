@@ -204,18 +204,27 @@ body.shop-page #cartCounter {
   grid-template-columns: 1fr 1fr;
   gap: 12px;
   width: 100%;
-}
-.cart-actions .btn {
-  padding: 16px 20px;
-  font-size: 1.1rem;
-  font-weight: 700;
-  text-align: center;
-  min-height: 52px;
-  border-radius: 12px;
-  transition: none;
-}
-.cart-actions .btn:hover {
-  transform: none;
+  
+  .btn,
+  button,
+  a {
+    padding: 16px 20px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    min-height: 52px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    box-sizing: border-box;
+    transition: transform 0.2s;
+    
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
 }
 
 .cart-empty {

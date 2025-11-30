@@ -98,13 +98,27 @@
   grid-template-columns: 1fr 1fr;
   gap: 16px;
   margin-top: 30px;
-}
-.checkout-actions .btn {
-  padding: 16px 24px;
-  font-size: 1.1rem;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
+  
+  .btn,
+  button,
+  a {
+    width: 100%;
+    padding: 16px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 12px;
+    transition: transform 0.2s;
+    
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
 }
 
 .success-modal {

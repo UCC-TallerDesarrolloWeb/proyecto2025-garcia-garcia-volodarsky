@@ -557,12 +557,12 @@
   ],
   "cart": [
     {
-      "id": "9539",
-      "productId": "2",
-      "name": "Camiseta Away 24/25",
-      "price": 31999,
+      "id": "4d39",
+      "productId": "3",
+      "name": "Gorra Classic",
+      "price": 19999,
       "qty": 2,
-      "image": "camisetavisita.jpg"
+      "image": "gorra.avif"
     }
   ]
 }
