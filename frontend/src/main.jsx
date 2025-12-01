@@ -5,7 +5,6 @@ import Shop from "@pages/shop";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@components/layout";
 import Home from "@pages/home";
-import Cart from "@pages/cart";
 import Calendario from "@pages/calendario";
 import Roster from "@pages/roster";
 import Historia from "@pages/historia";
@@ -21,7 +20,6 @@ createRoot(document.getElementById("root")).render(
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/shop" element={<Shop />} />
-            <Route path="/cart" element={<Cart />} />
             <Route path="/calendario" element={<Calendario />} />
             <Route path="/roster" element={<Roster />} />
             <Route path="/historia" element={<Historia />} />
